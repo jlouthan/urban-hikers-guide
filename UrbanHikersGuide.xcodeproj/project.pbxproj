@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */; };
+		18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */; };
+		18BBF3591D9F28C400FF0BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BBF3571D9F28C400FF0BE7 /* Main.storyboard */; };
+		18BBF35B1D9F28C400FF0BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */; };
+		18BBF35E1D9F28C400FF0BE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */; };
+		18BBF3691D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3681D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift */; };
+		18BBF3741D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18BBF3651D9F28C400FF0BE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BBF3481D9F28C400FF0BE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BBF34F1D9F28C400FF0BE7;
+			remoteInfo = UrbanHikersGuide;
+		};
+		18BBF3701D9F28C400FF0BE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BBF3481D9F28C400FF0BE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BBF34F1D9F28C400FF0BE7;
+			remoteInfo = UrbanHikersGuide;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18BBF3501D9F28C400FF0BE7 /* UrbanHikersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanHikersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListViewController.swift; sourceTree = "<group>"; };
+		18BBF3581D9F28C400FF0BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18BBF35D1D9F28C400FF0BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18BBF35F1D9F28C400FF0BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BBF3641D9F28C400FF0BE7 /* UrbanHikersGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrbanHikersGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BBF3681D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanHikersGuideTests.swift; sourceTree = "<group>"; };
+		18BBF36A1D9F28C400FF0BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BBF36F1D9F28C400FF0BE7 /* UrbanHikersGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrbanHikersGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanHikersGuideUITests.swift; sourceTree = "<group>"; };
+		18BBF3751D9F28C400FF0BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18BBF34D1D9F28C400FF0BE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF3611D9F28C400FF0BE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF36C1D9F28C400FF0BE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18BBF3471D9F28C400FF0BE7 = {
+			isa = PBXGroup;
+			children = (
+				18BBF3521D9F28C400FF0BE7 /* UrbanHikersGuide */,
+				18BBF3671D9F28C400FF0BE7 /* UrbanHikersGuideTests */,
+				18BBF3721D9F28C400FF0BE7 /* UrbanHikersGuideUITests */,
+				18BBF3511D9F28C400FF0BE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18BBF3511D9F28C400FF0BE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18BBF3501D9F28C400FF0BE7 /* UrbanHikersGuide.app */,
+				18BBF3641D9F28C400FF0BE7 /* UrbanHikersGuideTests.xctest */,
+				18BBF36F1D9F28C400FF0BE7 /* UrbanHikersGuideUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18BBF3521D9F28C400FF0BE7 /* UrbanHikersGuide */ = {
+			isa = PBXGroup;
+			children = (
+				18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */,
+				18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */,
+				18BBF3571D9F28C400FF0BE7 /* Main.storyboard */,
+				18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */,
+				18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */,
+				18BBF35F1D9F28C400FF0BE7 /* Info.plist */,
+			);
+			path = UrbanHikersGuide;
+			sourceTree = "<group>";
+		};
+		18BBF3671D9F28C400FF0BE7 /* UrbanHikersGuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				18BBF3681D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift */,
+				18BBF36A1D9F28C400FF0BE7 /* Info.plist */,
+			);
+			path = UrbanHikersGuideTests;
+			sourceTree = "<group>";
+		};
+		18BBF3721D9F28C400FF0BE7 /* UrbanHikersGuideUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */,
+				18BBF3751D9F28C400FF0BE7 /* Info.plist */,
+			);
+			path = UrbanHikersGuideUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18BBF34F1D9F28C400FF0BE7 /* UrbanHikersGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BBF3781D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuide" */;
+			buildPhases = (
+				18BBF34C1D9F28C400FF0BE7 /* Sources */,
+				18BBF34D1D9F28C400FF0BE7 /* Frameworks */,
+				18BBF34E1D9F28C400FF0BE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UrbanHikersGuide;
+			productName = UrbanHikersGuide;
+			productReference = 18BBF3501D9F28C400FF0BE7 /* UrbanHikersGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18BBF3631D9F28C400FF0BE7 /* UrbanHikersGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BBF37B1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideTests" */;
+			buildPhases = (
+				18BBF3601D9F28C400FF0BE7 /* Sources */,
+				18BBF3611D9F28C400FF0BE7 /* Frameworks */,
+				18BBF3621D9F28C400FF0BE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BBF3661D9F28C400FF0BE7 /* PBXTargetDependency */,
+			);
+			name = UrbanHikersGuideTests;
+			productName = UrbanHikersGuideTests;
+			productReference = 18BBF3641D9F28C400FF0BE7 /* UrbanHikersGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18BBF36E1D9F28C400FF0BE7 /* UrbanHikersGuideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BBF37E1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideUITests" */;
+			buildPhases = (
+				18BBF36B1D9F28C400FF0BE7 /* Sources */,
+				18BBF36C1D9F28C400FF0BE7 /* Frameworks */,
+				18BBF36D1D9F28C400FF0BE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BBF3711D9F28C400FF0BE7 /* PBXTargetDependency */,
+			);
+			name = UrbanHikersGuideUITests;
+			productName = UrbanHikersGuideUITests;
+			productReference = 18BBF36F1D9F28C400FF0BE7 /* UrbanHikersGuideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18BBF3481D9F28C400FF0BE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = JennyLouthan;
+				TargetAttributes = {
+					18BBF34F1D9F28C400FF0BE7 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					18BBF3631D9F28C400FF0BE7 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 18BBF34F1D9F28C400FF0BE7;
+					};
+					18BBF36E1D9F28C400FF0BE7 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 18BBF34F1D9F28C400FF0BE7;
+					};
+				};
+			};
+			buildConfigurationList = 18BBF34B1D9F28C400FF0BE7 /* Build configuration list for PBXProject "UrbanHikersGuide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18BBF3471D9F28C400FF0BE7;
+			productRefGroup = 18BBF3511D9F28C400FF0BE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18BBF34F1D9F28C400FF0BE7 /* UrbanHikersGuide */,
+				18BBF3631D9F28C400FF0BE7 /* UrbanHikersGuideTests */,
+				18BBF36E1D9F28C400FF0BE7 /* UrbanHikersGuideUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18BBF34E1D9F28C400FF0BE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BBF35E1D9F28C400FF0BE7 /* LaunchScreen.storyboard in Resources */,
+				18BBF35B1D9F28C400FF0BE7 /* Assets.xcassets in Resources */,
+				18BBF3591D9F28C400FF0BE7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF3621D9F28C400FF0BE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF36D1D9F28C400FF0BE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18BBF34C1D9F28C400FF0BE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
+				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF3601D9F28C400FF0BE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BBF3691D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BBF36B1D9F28C400FF0BE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BBF3741D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18BBF3661D9F28C400FF0BE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BBF34F1D9F28C400FF0BE7 /* UrbanHikersGuide */;
+			targetProxy = 18BBF3651D9F28C400FF0BE7 /* PBXContainerItemProxy */;
+		};
+		18BBF3711D9F28C400FF0BE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BBF34F1D9F28C400FF0BE7 /* UrbanHikersGuide */;
+			targetProxy = 18BBF3701D9F28C400FF0BE7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18BBF3571D9F28C400FF0BE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18BBF3581D9F28C400FF0BE7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18BBF35D1D9F28C400FF0BE7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18BBF3761D9F28C400FF0BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18BBF3771D9F28C400FF0BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18BBF3791D9F28C400FF0BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UrbanHikersGuide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18BBF37A1D9F28C400FF0BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UrbanHikersGuide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18BBF37C1D9F28C400FF0BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UrbanHikersGuideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UrbanHikersGuide.app/UrbanHikersGuide";
+			};
+			name = Debug;
+		};
+		18BBF37D1D9F28C400FF0BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UrbanHikersGuideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UrbanHikersGuide.app/UrbanHikersGuide";
+			};
+			name = Release;
+		};
+		18BBF37F1D9F28C400FF0BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UrbanHikersGuideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UrbanHikersGuide;
+			};
+			name = Debug;
+		};
+		18BBF3801D9F28C400FF0BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UrbanHikersGuideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jennylouthan.UrbanHikersGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UrbanHikersGuide;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18BBF34B1D9F28C400FF0BE7 /* Build configuration list for PBXProject "UrbanHikersGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BBF3761D9F28C400FF0BE7 /* Debug */,
+				18BBF3771D9F28C400FF0BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BBF3781D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BBF3791D9F28C400FF0BE7 /* Debug */,
+				18BBF37A1D9F28C400FF0BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18BBF37B1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BBF37C1D9F28C400FF0BE7 /* Debug */,
+				18BBF37D1D9F28C400FF0BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18BBF37E1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BBF37F1D9F28C400FF0BE7 /* Debug */,
+				18BBF3801D9F28C400FF0BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18BBF3481D9F28C400FF0BE7 /* Project object */;
+}
