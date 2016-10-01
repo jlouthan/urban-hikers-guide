@@ -35,8 +35,12 @@ class HikeListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let hikeName = hikes[indexPath.row]
-        print("Clicked hike \(hikeName)")
+        let hike = hikes[indexPath.row]
+        print("Clicked hike \(hike)")
+        
+        let controller = storyboard!.instantiateViewControllerWithIdentifier("HikeDetailViewController") as! HikeDetailViewController
+        controller.hike = hike
+        navigationController!.pushViewController(controller, animated: true)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

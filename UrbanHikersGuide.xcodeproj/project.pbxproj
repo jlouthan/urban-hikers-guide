@@ -15,6 +15,7 @@
 		18BBF3691D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3681D9F28C400FF0BE7 /* UrbanHikersGuideTests.swift */; };
 		18BBF3741D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */; };
 		18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3821D9F336E00FF0BE7 /* Hike.swift */; };
+		18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanHikersGuideUITests.swift; sourceTree = "<group>"; };
 		18BBF3751D9F28C400FF0BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BBF3821D9F336E00FF0BE7 /* Hike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */,
 				18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */,
 				18BBF35F1D9F28C400FF0BE7 /* Info.plist */,
+				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
 			);
 			path = UrbanHikersGuide;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
 				18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,

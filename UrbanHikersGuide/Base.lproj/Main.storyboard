@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -49,6 +50,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbr-5O-uWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512" y="308"/>
+        </scene>
+        <!--Hike Detail View Controller-->
+        <scene sceneID="c2y-Tj-Ef5">
+            <objects>
+                <viewController storyboardIdentifier="HikeDetailViewController" id="Dwr-Os-Xhc" customClass="HikeDetailViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ics-XP-KLO"/>
+                        <viewControllerLayoutGuide type="bottom" id="aKQ-ds-aWN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O2d-z3-Qin">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmg-Rg-fCl">
+                                <rect key="frame" x="279" y="62" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfm-Vr-PC6">
+                                <rect key="frame" x="61" y="138" width="478" height="129"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129" id="fAu-3R-kld"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfm-Vr-PC6" secondAttribute="trailing" constant="41" id="1xZ-uT-y62"/>
+                            <constraint firstItem="Hmg-Rg-fCl" firstAttribute="top" secondItem="Ics-XP-KLO" secondAttribute="bottom" constant="42" id="AB1-PT-mEk"/>
+                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="top" secondItem="Hmg-Rg-fCl" secondAttribute="bottom" constant="55" id="f1y-SL-uus"/>
+                            <constraint firstItem="Hmg-Rg-fCl" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="fDR-wx-ovX"/>
+                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="h3f-E7-vhk"/>
+                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="leading" secondItem="O2d-z3-Qin" secondAttribute="leadingMargin" constant="41" id="qch-hz-PCU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h3f-E7-vhk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="xfm-Vr-PC6" id="mDS-FS-1Uk"/>
+                        <outlet property="nameLabel" destination="Hmg-Rg-fCl" id="aKM-hW-xgC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRa-kQ-YQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K4c-Dt-n3W">
