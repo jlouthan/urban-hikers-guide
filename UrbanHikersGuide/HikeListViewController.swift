@@ -10,14 +10,22 @@ import UIKit
 
 class HikeListViewController: UITableViewController {
     
-    let hikes = [
-        ["name": "Hike 1", "distance": 4.5],
-        ["name": "Hike 2", "distance": 2.5]
+    let hikeArray = [
+        ["name": "Hike 1", "distance": 4.5, "description": "This is the first hike."],
+        ["name": "Hike 2", "distance": 2.5, "description": "This is the second hike."]
     ]
+    
+    var hikes = [Hike]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Eventually these will be put in core data instead
+        for hikeDict in hikeArray {
+            let newHike = Hike(dictionary: hikeDict)
+            hikes.append(newHike)
+        }
     }
     
     //MARK: Table View Delegate
@@ -35,7 +43,8 @@ class HikeListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("HikeCell")!
         
         let hike = hikes[indexPath.row]
-        cell.textLabel?.text = hike["name"] as? String
+        cell.textLabel?.text = hike.name
+        cell.detailTextLabel?.text = "\(hike.distance) mi, \(hike.difficulty)"
         
         return cell
     }
