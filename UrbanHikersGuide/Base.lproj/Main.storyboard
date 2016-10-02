@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--All Hikes-->
         <scene sceneID="pUl-sC-6bx">
             <objects>
                 <tableViewController id="1yn-8n-pQC" customClass="HikeListViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,16 +46,16 @@
                             <outlet property="delegate" destination="1yn-8n-pQC" id="FnT-C0-a4o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hdC-fp-bf9"/>
+                    <navigationItem key="navigationItem" title="All Hikes" id="hdC-fp-bf9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbr-5O-uWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512" y="308"/>
         </scene>
-        <!--Hike Detail View Controller-->
+        <!--Overview-->
         <scene sceneID="c2y-Tj-Ef5">
             <objects>
-                <viewController storyboardIdentifier="HikeDetailViewController" id="Dwr-Os-Xhc" customClass="HikeDetailViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HikeDetailViewController" title="Overview" id="Dwr-Os-Xhc" customClass="HikeDetailViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ics-XP-KLO"/>
                         <viewControllerLayoutGuide type="bottom" id="aKQ-ds-aWN"/>

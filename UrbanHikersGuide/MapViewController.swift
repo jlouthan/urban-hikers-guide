@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         mapImageView.image = hike.mapImage
+        title = hike.name
     }
     
     //Download File Actions
