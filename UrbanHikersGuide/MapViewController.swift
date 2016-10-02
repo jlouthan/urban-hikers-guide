@@ -14,13 +14,68 @@ class MapViewController: UIViewController {
     
     var hike: Hike!
     
+    var session = NSURLSession.sharedSession()
+    
     @IBOutlet weak var mapImageView: UIImageView!
     
     override func viewDidLoad() {
         mapImageView.image = hike.mapImage
     }
+    
     @IBAction func downloadKml(sender: UIButton) {
         //TODO download kml file from hike.kmlUrl
         print("Downloading from url: \(hike.kmlUrl)")
+        
+        //For now, use the shared session
+        //TODO create custom session so I can set self to delegate
+        // and receive handlers to indicate download activity?
+        guard let kmlUrl = hike.kmlUrl else {
+            print("Hike does not have a kml file url. Aborting download")
+            return
+        }
+        
+        let request = NSMutableURLRequest(URL: kmlUrl)
+        request.addValue("tmsv3uyh462u7fwqawhwy8stzdqsdzfs", forHTTPHeaderField: "Api-Key")
+        request.addValue("Bearer 9fed1f01e0148dec037e751e2f4ebe7f57d929bc", forHTTPHeaderField: "Authorization")
+        
+        //TODO this callback could be moved to a handler to better monitor progress
+        let task = session.downloadTaskWithRequest(request) { (url, response, error) in
+            //TODO add all error handling
+            
+            guard let url = url else {
+                print("No url returned from kml download request")
+                return
+            }
+            
+            //Move the file to a permanent destination
+            let fileManager = NSFileManager.defaultManager()
+            
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+            
+            let newFileName = "/" + self.hike.name.componentsSeparatedByString(" ").joinWithSeparator("-") + ".kml"
+            let newFilePath = documentsPath.stringByAppendingString(newFileName)
+            
+            let destinationUrl = NSURL(fileURLWithPath: newFilePath)
+            
+            //Remove the file if it already exists
+            do {
+                try fileManager.removeItemAtURL(destinationUrl)
+            } catch {
+                //Not fatal
+            }
+            
+            do {
+                try fileManager.copyItemAtURL(url, toURL: destinationUrl)
+            } catch let error as NSError {
+                print("Error moving .kml file to disk: \(error.localizedDescription)")
+            }
+            
+            //success saving file 
+            //TODO indicate success in the UI
+            print("Download .kml file and saved to \(destinationUrl)")
+        }
+        
+        task.resume()
+        
     }
 }
