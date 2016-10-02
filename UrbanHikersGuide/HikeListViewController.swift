@@ -10,25 +10,6 @@ import UIKit
 
 class HikeListViewController: UITableViewController {
     
-    let hikeArray = [
-        [
-            "name": "Hike 1",
-            "distance": 4.5,
-            "description": "This is the first hike.",
-            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294139323/1475258232?size=600x600",
-            "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=kml&field_set=detailed",
-            "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=gpx&field_set=detailed"
-        ],
-        [
-            "name": "Hike 2",
-            "distance": 2.5,
-            "description": "This is the second hike.",
-            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294135363/1475258232?size=600x600",
-            "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294135363/?format=kml&field_set=detailed",
-            "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294135363/?format=gpx&field_set=detailed"
-        ]
-    ]
-    
     var hikes = [Hike]()
     
     override func viewDidLoad() {
@@ -36,9 +17,21 @@ class HikeListViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //Eventually these will be put in core data instead
-        for hikeDict in hikeArray {
-            let newHike = Hike(dictionary: hikeDict)
-            hikes.append(newHike)
+        UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
+            guard success == true, let hikeArray = hikeDictionaries else {
+                print("An Error occurred retrieving Hike data.")
+                //TODO show an error message in the UI as well here
+                return
+            }
+            
+            for hikeDict in hikeArray {
+                let newHike = Hike(dictionary: hikeDict)
+                self.hikes.append(newHike)
+            }
+            
+            performUIUpdatesOnMain({ 
+                self.tableView.reloadData()
+            })
         }
     }
     
@@ -50,7 +43,6 @@ class HikeListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let hike = hikes[indexPath.row]
-        print("Clicked hike \(hike)")
         
         let controller = storyboard!.instantiateViewControllerWithIdentifier("HikeDetailViewController") as! HikeDetailViewController
         controller.hike = hike

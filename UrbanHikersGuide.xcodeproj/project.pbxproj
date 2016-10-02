@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		189407391DA0997600EFAB0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407381DA0997600EFAB0A /* MapViewController.swift */; };
+		1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */; };
+		189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */; };
+		189407421DA0CE6300EFAB0A /* NetworkRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407411DA0CE6300EFAB0A /* NetworkRequestBuilder.swift */; };
+		189407441DA0CFBF00EFAB0A /* UnderArmourConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407431DA0CFBF00EFAB0A /* UnderArmourConvenience.swift */; };
+		189407461DA0DAAD00EFAB0A /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407451DA0DAAD00EFAB0A /* GCDBlackBox.swift */; };
 		18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */; };
 		18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */; };
 		18BBF3591D9F28C400FF0BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BBF3571D9F28C400FF0BE7 /* Main.storyboard */; };
@@ -38,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		189407381DA0997600EFAB0A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourConstants.swift; sourceTree = "<group>"; };
+		1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourClient.swift; sourceTree = "<group>"; };
+		189407411DA0CE6300EFAB0A /* NetworkRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestBuilder.swift; sourceTree = "<group>"; };
+		189407431DA0CFBF00EFAB0A /* UnderArmourConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourConvenience.swift; sourceTree = "<group>"; };
+		189407451DA0DAAD00EFAB0A /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		18BBF3501D9F28C400FF0BE7 /* UrbanHikersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanHikersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +90,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1894073A1DA0C8F300EFAB0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */,
+				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
+				189407381DA0997600EFAB0A /* MapViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1894073B1DA0C90500EFAB0A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1894073C1DA0C94100EFAB0A /* UnderArmour */,
+				189407411DA0CE6300EFAB0A /* NetworkRequestBuilder.swift */,
+				189407451DA0DAAD00EFAB0A /* GCDBlackBox.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		1894073C1DA0C94100EFAB0A /* UnderArmour */ = {
+			isa = PBXGroup;
+			children = (
+				1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */,
+				1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */,
+				189407431DA0CFBF00EFAB0A /* UnderArmourConvenience.swift */,
+			);
+			name = UnderArmour;
+			sourceTree = "<group>";
+		};
 		18BBF3471D9F28C400FF0BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +143,14 @@
 		18BBF3521D9F28C400FF0BE7 /* UrbanHikersGuide */ = {
 			isa = PBXGroup;
 			children = (
+				1894073B1DA0C90500EFAB0A /* Networking */,
+				1894073A1DA0C8F300EFAB0A /* Controller */,
 				18BBF3811D9F335100FF0BE7 /* Model */,
 				18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */,
-				18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */,
 				18BBF3571D9F28C400FF0BE7 /* Main.storyboard */,
 				18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */,
 				18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */,
 				18BBF35F1D9F28C400FF0BE7 /* Info.plist */,
-				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
-				189407381DA0997600EFAB0A /* MapViewController.swift */,
 			);
 			path = UrbanHikersGuide;
 			sourceTree = "<group>";
@@ -273,11 +312,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189407421DA0CE6300EFAB0A /* NetworkRequestBuilder.swift in Sources */,
+				1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */,
 				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
 				18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */,
+				189407461DA0DAAD00EFAB0A /* GCDBlackBox.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
 				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
+				189407441DA0CFBF00EFAB0A /* UnderArmourConvenience.swift in Sources */,
+				189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
