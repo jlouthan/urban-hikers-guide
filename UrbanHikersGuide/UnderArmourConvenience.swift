@@ -32,11 +32,21 @@ extension UnderArmourClient {
             //Make sure response has the fields we need for the hike
             guard let hikeName = result[ResponseKeys.HikeName] as? String,
                 let hikeDistance = result[ResponseKeys.HikeDistance] as? Double,
-                let hikeDescription = result[ResponseKeys.HikeDescription] as? String else {
+                let hikeDescription = result[ResponseKeys.HikeDescription] as? String,
+                let hikeLinks = result[ResponseKeys.HikeLinks] as? [String: AnyObject] else {
                     print("GetRouteById response does not contain all required Hike properties.")
                     completionHandlerForGetRouteById(success: false, hikeDictionary: nil)
                     return
             }
+            
+            //Get links for Hike files from more complex key paths
+            guard let hikeThumbs = hikeLinks["thumbnail"] as? [[String: AnyObject]],
+                let hikeMapImageUrl = hikeThumbs[0]["href"] as? String else {
+                    print("GetRouteById response does not contain expected Hike link properties.")
+                    completionHandlerForGetRouteById(success: false, hikeDictionary: nil)
+                    return
+            }
+            
             
             //Get desired values from response
             let hikeDict = [
@@ -44,7 +54,7 @@ extension UnderArmourClient {
                 "distance": hikeDistance,
                 "description": hikeDescription,
                 //TODO grab real values of these values from convoluted response
-                "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294139323/1475258232?size=600x600",
+                "mapImageUrl": "https:" + hikeMapImageUrl,
                 "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=kml&field_set=detailed",
                 "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=gpx&field_set=detailed"
             ]
@@ -81,4 +91,10 @@ extension UnderArmourClient {
             completionHandlerForGetAllRoutes(success: true, hikeDictionaries: hikeDictionaries)
         }
     }
+    
+    //MARK: Helpers
+//    
+//    private func getHikeLink(forKey: [AnyObject], inHikeDict: [String: AnyObject]) -> String {
+//        
+//    }
 }

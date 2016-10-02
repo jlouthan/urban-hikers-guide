@@ -67,10 +67,10 @@ extension UnderArmourClient {
         static let HikeName = "name"
         static let HikeDistance = "distance"
         static let HikeDescription = "description"
-        static let HikeLinkes = "_links"
-        //MARK: Response links keys
-        static let HikeMapUrl = "_links.thumbnail.0.href"
-        static let HikeKmlUrl = "_linkes.alternate.0.href"
-        static let HikeGpxUrl = "_links.alternate.1.href"
+        static let HikeLinks = "_links"
+        //MARK: Response links locations
+        static let HikeMapUrlPath = ["thumbnail", 0, "href"]
+        static let HikeKmlUrlPath = ["alternate", 0, "href"]
+        static let HikeGpxUrlPath = ["alternate", 1, "href"]
     }
 }
