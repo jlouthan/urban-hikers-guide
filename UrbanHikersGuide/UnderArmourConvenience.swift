@@ -40,6 +40,8 @@ extension UnderArmourClient {
             }
             
             //Get links for Hike files from more complex key paths
+            //TODO generalize this?
+            //TODO get bigger image!
             guard let hikeThumbs = hikeLinks["thumbnail"] as? [[String: AnyObject]],
                 let hikeMapImageUrl = hikeThumbs[0]["href"] as? String else {
                     print("GetRouteById response does not contain expected Hike link properties.")
@@ -47,16 +49,23 @@ extension UnderArmourClient {
                     return
             }
             
+            //TODO generalize this?
+            guard let hikeFiles = hikeLinks["alternate"] as? [[String: AnyObject]],
+                let hikeKmlFileUrl = hikeFiles[0]["href"] as? String,
+                let hikeGpxFileUrl = hikeFiles[1]["href"] as? String else {
+                    print("GetRouteById response does not contain expected Hike link properties")
+                    completionHandlerForGetRouteById(success: false, hikeDictionary: nil)
+                    return
+            }
             
             //Get desired values from response
             let hikeDict = [
                 "name": hikeName,
                 "distance": hikeDistance,
                 "description": hikeDescription,
-                //TODO grab real values of these values from convoluted response
                 "mapImageUrl": "https:" + hikeMapImageUrl,
-                "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=kml&field_set=detailed",
-                "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=gpx&field_set=detailed"
+                "kmlFileUrl": "https://" + API.APIHost + hikeKmlFileUrl,
+                "gpxFileUrl": "https://" + API.APIHost + hikeGpxFileUrl
             ]
             
             completionHandlerForGetRouteById(success: true, hikeDictionary: hikeDict as? [String : AnyObject])
