@@ -19,4 +19,9 @@ class HikeDetailViewController: UIViewController {
         nameLabel.text = hike.name
         descriptionTextView.text = hike.description
     }
+    @IBAction func showMapView(sender: UIButton) {
+        let controller = storyboard!.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        controller.hike = hike
+        navigationController!.pushViewController(controller, animated: true)
+    }
 }

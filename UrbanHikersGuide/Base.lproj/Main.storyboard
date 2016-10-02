@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -79,11 +80,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqu-xJ-1I2">
+                                <rect key="frame" x="241" y="346" width="118" height="30"/>
+                                <state key="normal" title="Map &amp; Directions"/>
+                                <connections>
+                                    <action selector="showMapView:" destination="Dwr-Os-Xhc" eventType="touchUpInside" id="kYK-mc-D48"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="xfm-Vr-PC6" secondAttribute="trailing" constant="41" id="1xZ-uT-y62"/>
+                            <constraint firstItem="qqu-xJ-1I2" firstAttribute="top" secondItem="xfm-Vr-PC6" secondAttribute="bottom" constant="79" id="86h-lS-Bsd"/>
                             <constraint firstItem="Hmg-Rg-fCl" firstAttribute="top" secondItem="Ics-XP-KLO" secondAttribute="bottom" constant="42" id="AB1-PT-mEk"/>
+                            <constraint firstItem="qqu-xJ-1I2" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="IUB-Aw-vYf"/>
                             <constraint firstItem="xfm-Vr-PC6" firstAttribute="top" secondItem="Hmg-Rg-fCl" secondAttribute="bottom" constant="55" id="f1y-SL-uus"/>
                             <constraint firstItem="Hmg-Rg-fCl" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="fDR-wx-ovX"/>
                             <constraint firstItem="xfm-Vr-PC6" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="h3f-E7-vhk"/>
@@ -103,6 +113,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRa-kQ-YQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="308"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="EXc-xM-XyV">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="gd2-dl-Imc" customClass="MapViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bJ6-ax-gQP"/>
+                        <viewControllerLayoutGuide type="bottom" id="mw3-g6-f4n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5u0-bL-rrV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4lw-3e-kSz">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4lw-3e-kSz" secondAttribute="height" multiplier="1:1" id="yVn-mC-kaE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4lw-3e-kSz" firstAttribute="leading" secondItem="5u0-bL-rrV" secondAttribute="leadingMargin" constant="-20" id="Jyx-3a-7Hw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4lw-3e-kSz" secondAttribute="trailing" constant="-20" id="KFx-SK-dlq"/>
+                            <constraint firstItem="4lw-3e-kSz" firstAttribute="top" secondItem="bJ6-ax-gQP" secondAttribute="bottom" id="hSG-Ze-D0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapImageView" destination="4lw-3e-kSz" id="Lh1-4R-Mk3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-aC-6Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K4c-Dt-n3W">

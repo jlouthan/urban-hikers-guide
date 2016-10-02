@@ -11,8 +11,18 @@ import UIKit
 class HikeListViewController: UITableViewController {
     
     let hikeArray = [
-        ["name": "Hike 1", "distance": 4.5, "description": "This is the first hike."],
-        ["name": "Hike 2", "distance": 2.5, "description": "This is the second hike."]
+        [
+            "name": "Hike 1",
+            "distance": 4.5,
+            "description": "This is the first hike.",
+            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294139323/1475258232?size=600x600"
+        ],
+        [
+            "name": "Hike 2",
+            "distance": 2.5,
+            "description": "This is the second hike.",
+            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294135363/1475258232?size=600x600"
+        ]
     ]
     
     var hikes = [Hike]()

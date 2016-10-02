@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189407391DA0997600EFAB0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407381DA0997600EFAB0A /* MapViewController.swift */; };
 		18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */; };
 		18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */; };
 		18BBF3591D9F28C400FF0BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BBF3571D9F28C400FF0BE7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189407381DA0997600EFAB0A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18BBF3501D9F28C400FF0BE7 /* UrbanHikersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanHikersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */,
 				18BBF35F1D9F28C400FF0BE7 /* Info.plist */,
 				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
+				189407381DA0997600EFAB0A /* MapViewController.swift */,
 			);
 			path = UrbanHikersGuide;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
 				18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
+				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +502,7 @@
 				18BBF37A1D9F28C400FF0BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BBF37B1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +511,7 @@
 				18BBF37D1D9F28C400FF0BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BBF37E1D9F28C400FF0BE7 /* Build configuration list for PBXNativeTarget "UrbanHikersGuideUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +520,7 @@
 				18BBF3801D9F28C400FF0BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

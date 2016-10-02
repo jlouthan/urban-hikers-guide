@@ -6,6 +6,7 @@
 //  Copyright © 2016 JennyLouthan. All rights reserved.
 //
 
+import UIKit
 
 struct Hike {
     
@@ -15,6 +16,7 @@ struct Hike {
     let distance: Double
     let description: String
     let difficulty: Difficulty
+    let mapImage: UIImage?
     
     enum Difficulty: Int {
         case easy = 1, moderate, difficult
@@ -28,6 +30,10 @@ struct Hike {
         
         //TODO make this a computed property instead?
         difficulty = Difficulty(rawValue: 2)!
+        
+        let imgUrl = dictionary["mapImageUrl"] as! String
+        let imgData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
+        mapImage = UIImage(data: imgData!)
     }
     
 }
