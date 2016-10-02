@@ -139,6 +139,13 @@
                                     <action selector="downloadKml:" destination="gd2-dl-Imc" eventType="touchUpInside" id="uFg-nv-HXk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-ad-JDY">
+                                <rect key="frame" x="236" y="710" width="129" height="30"/>
+                                <state key="normal" title="Download .gpx File"/>
+                                <connections>
+                                    <action selector="downloadGpx:" destination="gd2-dl-Imc" eventType="touchUpInside" id="ngr-w5-OHf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -146,6 +153,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4lw-3e-kSz" secondAttribute="trailing" constant="-20" id="KFx-SK-dlq"/>
                             <constraint firstItem="vP2-pM-JEg" firstAttribute="top" secondItem="4lw-3e-kSz" secondAttribute="bottom" constant="40" id="bfz-y8-7sW"/>
                             <constraint firstItem="4lw-3e-kSz" firstAttribute="top" secondItem="bJ6-ax-gQP" secondAttribute="bottom" id="hSG-Ze-D0N"/>
+                            <constraint firstItem="CaL-ad-JDY" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="hs5-8a-OVi"/>
+                            <constraint firstItem="CaL-ad-JDY" firstAttribute="top" secondItem="vP2-pM-JEg" secondAttribute="bottom" constant="20" id="k7n-gK-msN"/>
                             <constraint firstItem="vP2-pM-JEg" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="lXl-0I-mUe"/>
                         </constraints>
                     </view>
