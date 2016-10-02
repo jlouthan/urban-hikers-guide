@@ -18,6 +18,9 @@ struct Hike {
     let difficulty: Difficulty
     let mapImage: UIImage?
     
+    let kmlUrl: NSURL?
+    let gpxUrl: NSURL?
+    
     enum Difficulty: Int {
         case easy = 1, moderate, difficult
     }
@@ -34,6 +37,9 @@ struct Hike {
         let imgUrl = dictionary["mapImageUrl"] as! String
         let imgData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
         mapImage = UIImage(data: imgData!)
+        
+        kmlUrl = NSURL(string: dictionary["kmlFileUrl"] as! String)
+        gpxUrl = NSURL(string: dictionary["gpxFileUrl"] as! String)
     }
     
 }

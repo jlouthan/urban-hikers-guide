@@ -132,12 +132,21 @@
                                     <constraint firstAttribute="width" secondItem="4lw-3e-kSz" secondAttribute="height" multiplier="1:1" id="yVn-mC-kaE"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vP2-pM-JEg">
+                                <rect key="frame" x="236" y="660" width="129" height="30"/>
+                                <state key="normal" title="Download .kml File"/>
+                                <connections>
+                                    <action selector="downloadKml:" destination="gd2-dl-Imc" eventType="touchUpInside" id="uFg-nv-HXk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4lw-3e-kSz" firstAttribute="leading" secondItem="5u0-bL-rrV" secondAttribute="leadingMargin" constant="-20" id="Jyx-3a-7Hw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4lw-3e-kSz" secondAttribute="trailing" constant="-20" id="KFx-SK-dlq"/>
+                            <constraint firstItem="vP2-pM-JEg" firstAttribute="top" secondItem="4lw-3e-kSz" secondAttribute="bottom" constant="40" id="bfz-y8-7sW"/>
                             <constraint firstItem="4lw-3e-kSz" firstAttribute="top" secondItem="bJ6-ax-gQP" secondAttribute="bottom" id="hSG-Ze-D0N"/>
+                            <constraint firstItem="vP2-pM-JEg" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="lXl-0I-mUe"/>
                         </constraints>
                     </view>
                     <connections>

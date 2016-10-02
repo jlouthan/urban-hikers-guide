@@ -19,4 +19,8 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         mapImageView.image = hike.mapImage
     }
+    @IBAction func downloadKml(sender: UIButton) {
+        //TODO download kml file from hike.kmlUrl
+        print("Downloading from url: \(hike.kmlUrl)")
+    }
 }

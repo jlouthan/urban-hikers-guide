@@ -15,13 +15,17 @@ class HikeListViewController: UITableViewController {
             "name": "Hike 1",
             "distance": 4.5,
             "description": "This is the first hike.",
-            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294139323/1475258232?size=600x600"
+            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294139323/1475258232?size=600x600",
+            "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=kml&field_set=detailed",
+            "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294139323/?format=gpx&field_set=detailed"
         ],
         [
             "name": "Hike 2",
             "distance": 2.5,
             "description": "This is the second hike.",
-            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294135363/1475258232?size=600x600"
+            "mapImageUrl": "https://drzetlglcbfx.cloudfront.net/routes/thumbnail/1294135363/1475258232?size=600x600",
+            "kmlFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294135363/?format=kml&field_set=detailed",
+            "gpxFileUrl": "https://oauth2-api.mapmyapi.com/v7.1/route/1294135363/?format=gpx&field_set=detailed"
         ]
     ]
     
