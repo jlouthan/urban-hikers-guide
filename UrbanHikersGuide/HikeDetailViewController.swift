@@ -46,6 +46,7 @@ class HikeDetailViewController: UIViewController {
     func toggleFavorite (sender: UIBarButtonSystemItem) {
         hike.isFavorite = !hike.isFavorite
         updateFavoriteBtnImage()
+        CoreDataStackManager.sharedInstance().saveContext()
     }
     
     func updateFavoriteBtnImage() {
