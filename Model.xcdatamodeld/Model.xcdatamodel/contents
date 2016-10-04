@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Hike" representedClassName=".Hike" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="gpxUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="kmlUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,6 +10,6 @@
         <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Hike" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Hike" positionX="-54" positionY="-9" width="128" height="150"/>
     </elements>
 </model>

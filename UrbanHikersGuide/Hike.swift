@@ -14,11 +14,11 @@ class Hike: NSManagedObject {
     //MARK: properties
     
     @NSManaged var name: String
-//    @NSManaged var distance: Double
+    @NSManaged var distance: Double
     @NSManaged var overview: String
-    var difficulty: Difficulty? {
+    var difficulty: Difficulty {
         get {
-            return Difficulty(rawValue: 2)
+            return Difficulty(rawValue: 2)!
         }
     }
     @NSManaged var mapImageData: NSData?
@@ -46,25 +46,18 @@ class Hike: NSManagedObject {
         
         //Set the properties on the model
         name = dictionary["name"] as! String
-//        if let myDistance = dictionary["distance"] as? Double {
-//            distance = myDistance
-//        } else {
-//            distance = 23.6
-//        }
-//        distance = dictionary["distance"] as! Double
+        distance = dictionary["distance"] as! Double
         overview = dictionary["overview"] as! String
         
         let imgUrl = dictionary["mapImageUrl"] as! String
         mapImageData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
-//        mapImage = UIImage(data: imgData!)
         if let isFav = dictionary["isFavorite"] as? Bool {
             isFavorite = isFav
         }
         
         kmlUrl = dictionary["kmlFileUrl"] as! String
         gpxUrl = dictionary["gpxFileUrl"] as! String
-//        kmlUrl = NSURL(string: dictionary["kmlFileUrl"] as! String)
-//        gpxUrl = NSURL(string: dictionary["gpxFileUrl"] as! String)
+
     }
     
 }

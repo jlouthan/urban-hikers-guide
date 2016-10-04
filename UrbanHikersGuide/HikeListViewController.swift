@@ -26,6 +26,11 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             print("Error performing initial fetch: \(error)")
         }
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         //If we don't have any hikes yet, make network request to get them
         if let hikeObjects = fetchedResultsController.fetchedObjects where hikeObjects.isEmpty {
             getHikes()
@@ -33,7 +38,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     }
     
     func getHikes() {
-        //Eventually these will be put in core data instead
+        
         UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
             guard success == true, let hikeArray = hikeDictionaries else {
                 print("An Error occurred retrieving Hike data.")
@@ -42,6 +47,8 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             }
             
             for hikeDict in hikeArray {
+                //Hike dictionaries are parsed appropriately by the UA Client, so we just
+                // have to call Hike init method for each
                 let hike = Hike(dictionary: hikeDict, context: self.sharedContext)
             }
             
@@ -57,7 +64,8 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     //MARK: Table View Delegate
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.sections![section].numberOfObjects
+        let section = fetchedResultsController.sections![section]
+        return section.numberOfObjects
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -68,14 +76,15 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         navigationController!.pushViewController(controller, animated: true)
     }
     
+    func configureCell(cell: UITableViewCell, withHike hike: Hike) {
+        cell.textLabel?.text = hike.name
+        cell.detailTextLabel?.text = "\(hike.distance) mi, \(hike.difficulty)"
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HikeCell")!
         let hike = fetchedResultsController.objectAtIndexPath(indexPath) as! Hike;
-        
-        cell.textLabel?.text = hike.name
-        cell.detailTextLabel?.text = "\(23) mi, \(hike.difficulty)"
-
-//        cell.detailTextLabel?.text = "\(hike.distance) mi, \(hike.difficulty)"
+        configureCell(cell, withHike: hike)
         
         return cell
     }
@@ -99,6 +108,46 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         
     }()
     
+    //FetchedResultsController delegate
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        
+        switch type {
+        case .Insert:
+            tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        default:
+            return
+        }
+    }
+    
+    //Some of these cases are unlikely or impossible with the MVP of this app, but want
+    // to have them all well-defined to futureproof
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Update:
+            //In event of update, reconfigure cell with updated Hike info
+            let cell = tableView.cellForRowAtIndexPath(indexPath!)!
+            let hike = controller.objectAtIndexPath(indexPath!) as! Hike
+            configureCell(cell, withHike: hike)
+        case .Move:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
+    }
 
 }
 
