@@ -7,43 +7,64 @@
 //
 
 import UIKit
+import CoreData
 
-struct Hike {
+class Hike: NSManagedObject {
     
     //MARK: properties
     
-    let name: String
-    let distance: Double
-    let description: String
-    let difficulty: Difficulty
-    let mapImage: UIImage?
-    var isFavorite: Bool = false
+    @NSManaged var name: String
+//    @NSManaged var distance: Double
+    @NSManaged var overview: String
+    var difficulty: Difficulty? {
+        get {
+            return Difficulty(rawValue: 2)
+        }
+    }
+    @NSManaged var mapImageData: NSData?
+    @NSManaged var isFavorite: Bool
     
-    let kmlUrl: NSURL?
-    let gpxUrl: NSURL?
+    @NSManaged var kmlUrl: String
+    @NSManaged var gpxUrl: String
     
     enum Difficulty: Int {
         case easy = 1, moderate, difficult
     }
     
     //MARK : Initializers
-    init(dictionary: [String:AnyObject]) {
-        name = dictionary["name"] as! String
-        distance = dictionary["distance"] as! Double
-        description = dictionary["description"] as! String
+    
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+    
+    init(dictionary: [String:AnyObject], context: NSManagedObjectContext) {
+        //Get the entity associated with the Hike type
+        let entity = NSEntityDescription.entityForName("Hike", inManagedObjectContext: context)!
         
-        //TODO make this a computed property instead?
-        difficulty = Difficulty(rawValue: 2)!
+        //Use the inherited init method from NSManagedObject
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        //Set the properties on the model
+        name = dictionary["name"] as! String
+//        if let myDistance = dictionary["distance"] as? Double {
+//            distance = myDistance
+//        } else {
+//            distance = 23.6
+//        }
+//        distance = dictionary["distance"] as! Double
+        overview = dictionary["overview"] as! String
         
         let imgUrl = dictionary["mapImageUrl"] as! String
-        let imgData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
-        mapImage = UIImage(data: imgData!)
+        mapImageData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
+//        mapImage = UIImage(data: imgData!)
         if let isFav = dictionary["isFavorite"] as? Bool {
             isFavorite = isFav
         }
         
-        kmlUrl = NSURL(string: dictionary["kmlFileUrl"] as! String)
-        gpxUrl = NSURL(string: dictionary["gpxFileUrl"] as! String)
+        kmlUrl = dictionary["kmlFileUrl"] as! String
+        gpxUrl = dictionary["gpxFileUrl"] as! String
+//        kmlUrl = NSURL(string: dictionary["kmlFileUrl"] as! String)
+//        gpxUrl = NSURL(string: dictionary["gpxFileUrl"] as! String)
     }
     
 }

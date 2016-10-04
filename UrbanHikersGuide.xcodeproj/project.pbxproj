@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3611DA345E000549572 /* CoreDataStackManager.swift */; };
+		1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3661DA3526F00549572 /* Model.xcdatamodeld */; };
 		189407391DA0997600EFAB0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407381DA0997600EFAB0A /* MapViewController.swift */; };
 		1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */; };
 		189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1827D3611DA345E000549572 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStackManager.swift; path = ../CoreDataStackManager.swift; sourceTree = "<group>"; };
+		1827D3671DA3526F00549572 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		189407381DA0997600EFAB0A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourConstants.swift; sourceTree = "<group>"; };
 		1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourClient.swift; sourceTree = "<group>"; };
@@ -147,8 +151,10 @@
 				1894073A1DA0C8F300EFAB0A /* Controller */,
 				18BBF3811D9F335100FF0BE7 /* Model */,
 				18BBF3531D9F28C400FF0BE7 /* AppDelegate.swift */,
+				1827D3611DA345E000549572 /* CoreDataStackManager.swift */,
 				18BBF3571D9F28C400FF0BE7 /* Main.storyboard */,
 				18BBF35A1D9F28C400FF0BE7 /* Assets.xcassets */,
+				1827D3661DA3526F00549572 /* Model.xcdatamodeld */,
 				18BBF35C1D9F28C400FF0BE7 /* LaunchScreen.storyboard */,
 				18BBF35F1D9F28C400FF0BE7 /* Info.plist */,
 			);
@@ -317,11 +323,13 @@
 				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
 				18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */,
 				189407461DA0DAAD00EFAB0A /* GCDBlackBox.swift in Sources */,
+				1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
 				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
 				189407441DA0CFBF00EFAB0A /* UnderArmourConvenience.swift in Sources */,
 				189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */,
+				1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +575,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1827D3661DA3526F00549572 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1827D3671DA3526F00549572 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1827D3671DA3526F00549572 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18BBF3481D9F28C400FF0BE7 /* Project object */;
 }

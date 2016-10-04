@@ -62,7 +62,7 @@ extension UnderArmourClient {
             let hikeDict = [
                 "name": hikeName,
                 "distance": hikeDistance,
-                "description": hikeDescription,
+                "overview": hikeDescription,
                 "mapImageUrl": "https:" + hikeMapImageUrl,
                 "kmlFileUrl": "https://" + API.APIHost + hikeKmlFileUrl,
                 "gpxFileUrl": "https://" + API.APIHost + hikeGpxFileUrl

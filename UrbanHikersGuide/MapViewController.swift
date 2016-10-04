@@ -19,18 +19,22 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapImageView: UIImageView!
     
     override func viewDidLoad() {
-        mapImageView.image = hike.mapImage
+        if let mapImageData = hike.mapImageData {
+            mapImageView.image = UIImage(data: mapImageData)
+        }
         title = hike.name
     }
     
     //Download File Actions
     
     @IBAction func downloadKml(sender: UIButton) {
-        downloadAndSaveMapFile("kml", url: hike.kmlUrl)
+        let kmlUrl = NSURL(string: hike.kmlUrl)
+        downloadAndSaveMapFile("kml", url: kmlUrl)
     }
     
     @IBAction func downloadGpx(sender: UIButton) {
-        downloadAndSaveMapFile("gpx", url: hike.gpxUrl)
+        let gpxUrl = NSURL(string: hike.gpxUrl)
+        downloadAndSaveMapFile("gpx", url: gpxUrl)
     }
     
     
