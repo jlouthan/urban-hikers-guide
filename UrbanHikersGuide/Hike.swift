@@ -17,6 +17,7 @@ struct Hike {
     let description: String
     let difficulty: Difficulty
     let mapImage: UIImage?
+    var isFavorite: Bool = false
     
     let kmlUrl: NSURL?
     let gpxUrl: NSURL?
@@ -37,6 +38,9 @@ struct Hike {
         let imgUrl = dictionary["mapImageUrl"] as! String
         let imgData = NSData(contentsOfURL: NSURL(string: imgUrl)!)
         mapImage = UIImage(data: imgData!)
+        if let isFav = dictionary["isFavorite"] as? Bool {
+            isFavorite = isFav
+        }
         
         kmlUrl = NSURL(string: dictionary["kmlFileUrl"] as! String)
         gpxUrl = NSURL(string: dictionary["gpxFileUrl"] as! String)

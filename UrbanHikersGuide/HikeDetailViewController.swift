@@ -16,6 +16,16 @@ class HikeDetailViewController: UIViewController {
     var hike: Hike!
     
     override func viewDidLoad() {
+        //Add favorite bar button item
+//        let favoriteBtn = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(favoriteHike(_:)))
+//        navigationItem.rightBarButtonItem = favoriteBtn
+        
+        let favoriteBtn = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        favoriteBtn.setImage(UIImage(named: "favoriteOn"), forState: .Normal)
+        favoriteBtn.addTarget(self, action: #selector(favoriteHike(_:)), forControlEvents: .TouchUpInside)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favoriteBtn)
+        
         nameLabel.text = hike.name
         descriptionTextView.text = hike.description
     }
@@ -23,5 +33,9 @@ class HikeDetailViewController: UIViewController {
         let controller = storyboard!.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
         controller.hike = hike
         navigationController!.pushViewController(controller, animated: true)
+    }
+    
+    func favoriteHike (sender: UIBarButtonSystemItem) {
+        print("Favoriting the hike!")
     }
 }
