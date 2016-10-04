@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3611DA345E000549572 /* CoreDataStackManager.swift */; };
 		1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3661DA3526F00549572 /* Model.xcdatamodeld */; };
+		1827D36B1DA36D4500549572 /* HikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */; };
 		189407391DA0997600EFAB0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407381DA0997600EFAB0A /* MapViewController.swift */; };
 		1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */; };
 		189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1827D3611DA345E000549572 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStackManager.swift; path = ../CoreDataStackManager.swift; sourceTree = "<group>"; };
 		1827D3671DA3526F00549572 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeTableViewCell.swift; sourceTree = "<group>"; };
 		189407381DA0997600EFAB0A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourConstants.swift; sourceTree = "<group>"; };
 		1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourClient.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1827D3691DA36D3200549572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1894073A1DA0C8F300EFAB0A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		18BBF3521D9F28C400FF0BE7 /* UrbanHikersGuide */ = {
 			isa = PBXGroup;
 			children = (
+				1827D3691DA36D3200549572 /* View */,
 				1894073B1DA0C90500EFAB0A /* Networking */,
 				1894073A1DA0C8F300EFAB0A /* Controller */,
 				18BBF3811D9F335100FF0BE7 /* Model */,
@@ -323,6 +334,7 @@
 				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
 				18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */,
 				189407461DA0DAAD00EFAB0A /* GCDBlackBox.swift in Sources */,
+				1827D36B1DA36D4500549572 /* HikeTableViewCell.swift in Sources */,
 				1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
 				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,

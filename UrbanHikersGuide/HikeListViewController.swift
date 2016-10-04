@@ -76,13 +76,18 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         navigationController!.pushViewController(controller, animated: true)
     }
     
-    func configureCell(cell: UITableViewCell, withHike hike: Hike) {
-        cell.textLabel?.text = hike.name
-        cell.detailTextLabel?.text = "\(hike.distance) mi, \(hike.difficulty)"
+    func configureCell(cell: HikeTableViewCell, withHike hike: Hike) {
+        cell.hikeTitle.text = hike.name
+        cell.hikeDetails.text = "\(hike.distance) mi, \(hike.difficulty)"
+        if hike.isFavorite {
+            cell.favoriteImageView.image = UIImage(named: "favoriteOn")
+        } else {
+            cell.favoriteImageView.image = nil
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HikeCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("HikeCell") as! HikeTableViewCell
         let hike = fetchedResultsController.objectAtIndexPath(indexPath) as! Hike;
         configureCell(cell, withHike: hike)
         
@@ -136,7 +141,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
             //In event of update, reconfigure cell with updated Hike info
-            let cell = tableView.cellForRowAtIndexPath(indexPath!)!
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HikeTableViewCell
             let hike = controller.objectAtIndexPath(indexPath!) as! Hike
             configureCell(cell, withHike: hike)
         case .Move:
