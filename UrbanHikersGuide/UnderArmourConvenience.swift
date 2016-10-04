@@ -41,13 +41,15 @@ extension UnderArmourClient {
             
             //Get links for Hike files from more complex key paths
             //TODO generalize this?
-            //TODO get bigger image!
             guard let hikeThumbs = hikeLinks["thumbnail"] as? [[String: AnyObject]],
-                let hikeMapImageUrl = hikeThumbs[0]["href"] as? String else {
+                var hikeMapImageUrl = hikeThumbs[0]["href"] as? String else {
                     print("GetRouteById response does not contain expected Hike link properties.")
                     completionHandlerForGetRouteById(success: false, hikeDictionary: nil)
                     return
             }
+            
+            //Replace size in mapImageUrl to retrieve bigger image from cloudfront
+            hikeMapImageUrl = hikeMapImageUrl.stringByReplacingOccurrencesOfString(API.ReturnedMapSize, withString: API.HikeMapSize)
             
             //TODO generalize this?
             guard let hikeFiles = hikeLinks["alternate"] as? [[String: AnyObject]],
@@ -101,9 +103,4 @@ extension UnderArmourClient {
         }
     }
     
-    //MARK: Helpers
-//    
-//    private func getHikeLink(forKey: [AnyObject], inHikeDict: [String: AnyObject]) -> String {
-//        
-//    }
 }

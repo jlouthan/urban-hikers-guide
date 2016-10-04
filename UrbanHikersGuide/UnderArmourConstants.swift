@@ -26,6 +26,9 @@ extension UnderArmourClient {
             "1294139323",
             "1296367525"
         ]
+        //Ensure we retrieve a large enough map from Cloudfront
+        static let ReturnedMapSize = "100"
+        static let HikeMapSize = "600"
     }
     
     //MARK: Header Keys {
