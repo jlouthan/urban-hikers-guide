@@ -24,7 +24,16 @@ extension UnderArmourClient {
         static let HikeRouteIds = [
             "1294135363",
             "1294139323",
-            "1296367525"
+            "1296367525",
+            "1302828913",
+            "1302842473",
+            "1302860908",
+            "1302869728",
+            "1302875917",
+            "1302883867",
+            "1302891301",
+            "1302899122",
+            "1302909400"
         ]
         //Ensure we retrieve a large enough map from Cloudfront
         static let ReturnedMapSize = "100"
