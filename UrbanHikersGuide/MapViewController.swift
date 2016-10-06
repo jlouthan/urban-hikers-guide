@@ -14,8 +14,6 @@ class MapViewController: UIViewController {
     
     var hike: Hike!
     
-    var session = NSURLSession.sharedSession()
-    
     @IBOutlet weak var mapImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -38,27 +36,23 @@ class MapViewController: UIViewController {
     }
     
     
-    //Download helper Method
+    //Mark: Download Map File and Save
     
-    //TODO move this to a networking class
     func downloadAndSaveMapFile(fileType: String, url: NSURL?) {
-        //For now, use the shared session
+        
         guard let url = url else {
             print("Hike does not have a \(fileType) file url. Aborting download")
             return
         }
         
-        let request = NSMutableURLRequest(URL: url)
-        request.addValue("tmsv3uyh462u7fwqawhwy8stzdqsdzfs", forHTTPHeaderField: "Api-Key")
-        request.addValue("Bearer 9fed1f01e0148dec037e751e2f4ebe7f57d929bc", forHTTPHeaderField: "Authorization")
-        
-        let task = session.downloadTaskWithRequest(request) { (url, response, error) in
-            //TODO add all error handling and alerts
+        UnderArmourClient.sharedInstance().downloadMapFile(url) { (success, responseUrl) in
             
-            guard let url = url else {
-                print("No url returned from download request")
+            guard success == true && responseUrl != nil else {
+                ErrorAlert.displayErrorAlert("Error downloading map file. Inspect your network connection and try again.", currentView: self)
                 return
             }
+            
+            //Success, now save the downloaded file
             
             //Move the file to a permanent destination
             let fileManager = NSFileManager.defaultManager()
@@ -78,16 +72,16 @@ class MapViewController: UIViewController {
             }
             
             do {
-                try fileManager.copyItemAtURL(url, toURL: destinationUrl)
+                try fileManager.copyItemAtURL(responseUrl!, toURL: destinationUrl)
             } catch let error as NSError {
                 print("Error moving file to disk: \(error.localizedDescription)")
             }
             
             //success saving file
-            //TODO indicate success in the UI
+            //TODO indicate success in the UI?
             print("Download file and saved to \(destinationUrl)")
+            
         }
-        
-        task.resume()
+
     }
 }

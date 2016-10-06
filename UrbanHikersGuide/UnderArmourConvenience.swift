@@ -152,4 +152,35 @@ let paramString = "\(RequestKeys.grantType)=\(RequestValues.grantType)&\(Request
         
     }
     
+    //MARK: Get Map File
+    
+    func downloadMapFile(url: NSURL, completionHandlerForDownloadMapFile: (success: Bool, url: NSURL?) -> Void) {
+        
+        getNewAccessToken { (success, accessToken) in
+            
+            guard success == true && accessToken != nil else {
+                print("There was an error retrieving UA Access Token")
+                completionHandlerForDownloadMapFile(success: false, url: nil)
+                return
+            }
+            
+            let headers = [
+                HeaderKeys.APIKey: HeaderValues.APIKey,
+                HeaderKeys.Authorization: "Bearer \(accessToken!)"
+            ]
+        
+            self.requestBuilder.taskForDownload(url, headers: headers, completionHandlerForDownload:     { (url, error) in
+                
+                guard error == nil && url != nil else {
+                    print(error)
+                    completionHandlerForDownloadMapFile(success: false, url: nil)
+                    return
+                }
+                completionHandlerForDownloadMapFile(success: true, url: url)
+                
+            })
+            
+        }
+    }
+    
 }

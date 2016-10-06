@@ -130,6 +130,38 @@ class NetworkRequestBuilder: NSObject {
         
     }
     
+    //Generic download task
+    func taskForDownload(url: NSURL, headers: [String: String], completionHandlerForDownload: (url: NSURL?, error: String?) -> Void) -> NSURLSessionDownloadTask {
+        
+        
+        let request = NSMutableURLRequest(URL: url)
+        
+        for (key, value) in headers {
+            request.addValue(value, forHTTPHeaderField: key)
+        }
+        
+        let task = session.downloadTaskWithRequest(request) { (url, response, error) in
+            
+            /* GUARD: Was there an error? */
+            guard (error == nil) else {
+                completionHandlerForDownload(url: nil, error: self.getStringFromError(error!))
+                return
+            }
+            
+            guard let url = url else {
+                completionHandlerForDownload(url: nil, error: "No url returned from download request")
+                return
+            }
+            
+            completionHandlerForDownload(url: url, error: nil)
+            
+        }
+        
+        //Start the request
+        task.resume()
+        return task
+    }
+    
     
     //MARK: Helpers
     private func getStringFromError(error: NSError) -> String {

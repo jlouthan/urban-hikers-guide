@@ -11,6 +11,7 @@
 		1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3661DA3526F00549572 /* Model.xcdatamodeld */; };
 		1827D36B1DA36D4500549572 /* HikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */; };
 		188ABF291DA5DB5900552205 /* UrbanHikersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ABF281DA5DB5900552205 /* UrbanHikersButton.swift */; };
+		188ABF2B1DA619E500552205 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ABF2A1DA619E500552205 /* ErrorAlert.swift */; };
 		189407391DA0997600EFAB0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189407381DA0997600EFAB0A /* MapViewController.swift */; };
 		1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */; };
 		189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */; };
@@ -50,6 +51,7 @@
 		1827D3671DA3526F00549572 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeTableViewCell.swift; sourceTree = "<group>"; };
 		188ABF281DA5DB5900552205 /* UrbanHikersButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrbanHikersButton.swift; sourceTree = "<group>"; };
+		188ABF2A1DA619E500552205 /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		189407381DA0997600EFAB0A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1894073D1DA0C95C00EFAB0A /* UnderArmourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourConstants.swift; sourceTree = "<group>"; };
 		1894073F1DA0CA6600EFAB0A /* UnderArmourClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderArmourClient.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */,
 				188ABF281DA5DB5900552205 /* UrbanHikersButton.swift */,
+				188ABF2A1DA619E500552205 /* ErrorAlert.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				189407421DA0CE6300EFAB0A /* NetworkRequestBuilder.swift in Sources */,
+				188ABF2B1DA619E500552205 /* ErrorAlert.swift in Sources */,
 				1894073E1DA0C95C00EFAB0A /* UnderArmourConstants.swift in Sources */,
 				188ABF291DA5DB5900552205 /* UrbanHikersButton.swift in Sources */,
 				18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */,
