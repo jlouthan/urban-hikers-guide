@@ -11,25 +11,11 @@ import CoreData
 
 class HikeListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    @IBAction func showFavorites(sender: UIBarButtonItem) {
-        print("SHOWING FAVORITES");
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Start the fetched results controller
-        var error: NSError?
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error1 as NSError {
-            error = error1
-        }
-        
-        if let error = error {
-            print("Error performing initial fetch: \(error)")
-        }
-        
+        performFetch()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +50,23 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         }
     }
     
+    @IBAction func showFavorites(sender: UIBarButtonItem) {
+        
+        if fetchedResultsController.fetchRequest.predicate != nil {
+            //This means we're already showing favorites. Switch to showing all.
+            fetchedResultsController.fetchRequest.predicate = nil
+        } else {
+            //This means we're not showing only favorites. Proceed to do so.
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(booleanLiteral: true))
+        }
+        
+        // re-fetch
+        performFetch()
+        
+        performUIUpdatesOnMain { 
+            self.tableView.reloadData()
+        }
+    }
     
     //MARK: Table View Delegate
     
@@ -117,6 +120,19 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         return fetchedResultsController
         
     }()
+    
+    //Perform a fetch
+    func performFetch() {
+        var error: NSError?
+        do {
+            try fetchedResultsController.performFetch()
+        } catch let error1 as NSError {
+            error = error1
+        }
+        if let error = error {
+            print("Error performing fetch: \(error)")
+        }
+    }
     
     //FetchedResultsController delegate
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
