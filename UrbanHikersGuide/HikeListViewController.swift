@@ -56,6 +56,8 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         }
     }
     
+    //MARK: UIBarButtonItem actions
+    
     @IBAction func showFavorites(sender: UIBarButtonItem) {
         
         if fetchedResultsController.fetchRequest.predicate != nil {
@@ -73,6 +75,20 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         
         performUIUpdatesOnMain { 
             self.tableView.reloadData()
+        }
+    }
+    @IBAction func refreshHikes(sender: UIBarButtonItem) {
+        //Try to delete all existing hikes
+        do {
+            let hikes = fetchedResultsController.fetchedObjects as! [Hike]
+            for hike in hikes {
+                sharedContext.deleteObject(hike)
+            }
+            //Save the context then get all fresh hikes
+            try sharedContext.save()
+            getHikes()
+        } catch let error as NSError {
+            print("Error refreshing hikes \(error)")
         }
     }
     

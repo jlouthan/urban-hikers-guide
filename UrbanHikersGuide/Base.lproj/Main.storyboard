@@ -65,6 +65,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Hikes" id="hdC-fp-bf9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="cQZ-bT-jyA">
+                            <connections>
+                                <action selector="refreshHikes:" destination="1yn-8n-pQC" id="JMV-LI-vyh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="favoriteSort" id="HGh-Xk-JQA">
                             <connections>
                                 <action selector="showFavorites:" destination="1yn-8n-pQC" id="rhk-YM-avT"/>
