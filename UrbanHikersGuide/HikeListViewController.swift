@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class HikeListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    @IBOutlet var refreshButton: UIBarButtonItem!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +65,14 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         if fetchedResultsController.fetchRequest.predicate != nil {
             //This means we're already showing favorites. Switch to showing all.
             fetchedResultsController.fetchRequest.predicate = nil
+
+            navigationItem.setLeftBarButtonItem(refreshButton, animated: true)
             navigationItem.title = "All Hikes"
         } else {
             //This means we're not showing only favorites. Proceed to do so.
             fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(booleanLiteral: true))
+            //Hide refresh option while showing favorite hikes
+            navigationItem.leftBarButtonItem = nil
             navigationItem.title = "Favorite Hikes"
         }
         

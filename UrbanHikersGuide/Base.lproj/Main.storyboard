@@ -76,6 +76,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="cQZ-bT-jyA" id="I1G-bI-6G4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbr-5O-uWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfm-Vr-PC6">
-                                <rect key="frame" x="61" y="138" width="478" height="150"/>
+                                <rect key="frame" x="44" y="139" width="512" height="133"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="fAu-3R-kld"/>
@@ -115,7 +118,7 @@
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqu-xJ-1I2" customClass="UrbanHikersButton" customModule="UrbanHikersGuide" customModuleProvider="target">
-                                <rect key="frame" x="241" y="367" width="118" height="30"/>
+                                <rect key="frame" x="241" y="328" width="118" height="30"/>
                                 <state key="normal" title="Map &amp; Directions"/>
                                 <connections>
                                     <action selector="showMapView:" destination="Dwr-Os-Xhc" eventType="touchUpInside" id="kYK-mc-D48"/>
@@ -124,14 +127,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xfm-Vr-PC6" secondAttribute="trailing" constant="41" id="1xZ-uT-y62"/>
-                            <constraint firstItem="qqu-xJ-1I2" firstAttribute="top" secondItem="xfm-Vr-PC6" secondAttribute="bottom" constant="79" id="86h-lS-Bsd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfm-Vr-PC6" secondAttribute="trailing" constant="24" id="1xZ-uT-y62"/>
+                            <constraint firstItem="qqu-xJ-1I2" firstAttribute="top" secondItem="xfm-Vr-PC6" secondAttribute="bottom" constant="56" id="86h-lS-Bsd"/>
                             <constraint firstItem="Hmg-Rg-fCl" firstAttribute="top" secondItem="Ics-XP-KLO" secondAttribute="bottom" constant="42" id="AB1-PT-mEk"/>
                             <constraint firstItem="qqu-xJ-1I2" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="IUB-Aw-vYf"/>
-                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="top" secondItem="Hmg-Rg-fCl" secondAttribute="bottom" constant="55" id="f1y-SL-uus"/>
+                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="top" secondItem="Hmg-Rg-fCl" secondAttribute="bottom" constant="56" id="f1y-SL-uus"/>
                             <constraint firstItem="Hmg-Rg-fCl" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="fDR-wx-ovX"/>
                             <constraint firstItem="xfm-Vr-PC6" firstAttribute="centerX" secondItem="O2d-z3-Qin" secondAttribute="centerX" id="h3f-E7-vhk"/>
-                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="leading" secondItem="O2d-z3-Qin" secondAttribute="leadingMargin" constant="41" id="qch-hz-PCU"/>
+                            <constraint firstItem="xfm-Vr-PC6" firstAttribute="leading" secondItem="O2d-z3-Qin" secondAttribute="leadingMargin" constant="24" id="qch-hz-PCU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
