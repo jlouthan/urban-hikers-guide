@@ -109,7 +109,7 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqu-xJ-1I2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqu-xJ-1I2" customClass="UrbanHikersButton" customModule="UrbanHikersGuide" customModuleProvider="target">
                                 <rect key="frame" x="241" y="367" width="118" height="30"/>
                                 <state key="normal" title="Map &amp; Directions"/>
                                 <connections>
@@ -161,14 +161,14 @@
                                     <constraint firstAttribute="width" secondItem="4lw-3e-kSz" secondAttribute="height" multiplier="1:1" id="yVn-mC-kaE"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vP2-pM-JEg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vP2-pM-JEg" customClass="UrbanHikersButton" customModule="UrbanHikersGuide" customModuleProvider="target">
                                 <rect key="frame" x="236" y="660" width="129" height="30"/>
                                 <state key="normal" title="Download .kml File"/>
                                 <connections>
                                     <action selector="downloadKml:" destination="gd2-dl-Imc" eventType="touchUpInside" id="uFg-nv-HXk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-ad-JDY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-ad-JDY" customClass="UrbanHikersButton" customModule="UrbanHikersGuide" customModuleProvider="target">
                                 <rect key="frame" x="236" y="710" width="129" height="30"/>
                                 <state key="normal" title="Download .gpx File"/>
                                 <connections>
