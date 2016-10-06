@@ -11,7 +11,7 @@ extension UnderArmourClient {
     struct API {
         //MARK: URLs
         static let APIScheme = "https"
-        static let APIHost = "oauth2-api.mapmyapi.com"
+        static let APIHost = "api.ua.com"
         static let APIPath = "/v7.1"
         //MARK: Common Headers
         static let CommonHeaders = [
@@ -56,7 +56,7 @@ extension UnderArmourClient {
     //MARK: Methods
     struct Methods {
         static let RouteById = "/route/{routeId}"
-        //TODO add refresh method here
+        static let GetAccessToken = "/oauth2/access_token/"
     }
     
     //MARK: URL Keys
@@ -72,6 +72,20 @@ extension UnderArmourClient {
     //MARK: Parameter Values
     struct ParameterValues {
         static let fieldSet = "detailed"
+    }
+    
+    //MARK: Request Keys
+    struct RequestKeys {
+        static let grantType = "grant_type"
+        static let clientId = "client_id"
+        static let clientSecret = "client_secret"
+    }
+    
+    //MARK: Request Values
+    struct RequestValues {
+        static let grantType = "client_credentials"
+        static let clientId = "tmsv3uyh462u7fwqawhwy8stzdqsdzfs"
+        static let clientSecret = "tuJpw9Sap2xD3XuJaAn2asMKMAX45snjCqEjw59YwB7"
     }
     
     //MARK: Response Keys

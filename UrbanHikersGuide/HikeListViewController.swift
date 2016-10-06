@@ -35,25 +35,33 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     
     func getHikes() {
         
-        UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
-            guard success == true, let hikeArray = hikeDictionaries else {
-                print("An Error occurred retrieving Hike data.")
-                //TODO show an error message in the UI as well here
+        UnderArmourClient.sharedInstance().getNewAccessToken { (success, accessToken) in
+            guard success == true && accessToken != nil else {
+                print("Unable to refresh the access token")
                 return
             }
             
-            for hikeDict in hikeArray {
-                //Hike dictionaries are parsed appropriately by the UA Client, so we just
-                // have to call Hike init method for each
-                let hike = Hike(dictionary: hikeDict, context: self.sharedContext)
-            }
             
-            performUIUpdatesOnMain({
-                //Save the hikes and reload the table
-                CoreDataStackManager.sharedInstance().saveContext()
-                self.tableView.reloadData()
-            })
         }
+//        UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
+//            guard success == true, let hikeArray = hikeDictionaries else {
+//                print("An Error occurred retrieving Hike data.")
+//                //TODO show an error message in the UI as well here
+//                return
+//            }
+//            
+//            for hikeDict in hikeArray {
+//                //Hike dictionaries are parsed appropriately by the UA Client, so we just
+//                // have to call Hike init method for each
+//                let hike = Hike(dictionary: hikeDict, context: self.sharedContext)
+//            }
+//            
+//            performUIUpdatesOnMain({
+//                //Save the hikes and reload the table
+//                CoreDataStackManager.sharedInstance().saveContext()
+//                self.tableView.reloadData()
+//            })
+//        }
     }
     
     //MARK: UIBarButtonItem actions

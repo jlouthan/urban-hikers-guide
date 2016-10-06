@@ -68,21 +68,22 @@ class NetworkRequestBuilder: NSObject {
         return task
     }
     
-    // MARK: Generic POST request
-    //TODO do we need this?
+    // MARK: Generic POST request, uses x-www-form-urlencoded
     
-    func taskForPOSTMethod (url: NSURL, JSONBody: [String: AnyObject], headers: [String: String], completionHandlerForPOST: (result: AnyObject!, error: String?) -> Void) -> NSURLSessionDataTask {
+    func taskForPOSTMethod (url: NSURL, paramString: String, headers: [String: String], completionHandlerForPOST: (result: AnyObject!, error: String?) -> Void) -> NSURLSessionDataTask {
         
-        //Accepting a ready-build url, so we start here
-        let request = NSMutableURLRequest(URL: url)
+        let postData = paramString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+        let postLength = String(format: "%d", postData!.length)
+        
+        var request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //Add any additional headers
+        request.setValue(postLength, forHTTPHeaderField: "Content-Length")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = postData
+    
         for (key, value) in headers {
             request.addValue(value, forHTTPHeaderField: key)
         }
-        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(JSONBody, options: .PrettyPrinted)
         
         //Make the request
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
@@ -129,62 +130,8 @@ class NetworkRequestBuilder: NSObject {
         
     }
     
-    //MARK Generic DELETE Request
-    //TODO do we need this?
-    func taskForDELETEMethod(url: NSURL, headers: [String: String], completionHandlerForDELETE: (result: AnyObject!, error: String?) -> Void) -> NSURLSessionDataTask {
-        
-        //Accepting a ready-build url, so we start here
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "DELETE"
-        //Add any additional headers
-        for (key, value) in headers {
-            request.addValue(value, forHTTPHeaderField: key)
-        }
-        
-        let task = session.dataTaskWithRequest(request) { (data, response, error) in
-            
-            func sendError(errorString: String) {
-                completionHandlerForDELETE(result: nil, error: errorString)
-            }
-            
-            /* GUARD: Was there an error? */
-            guard error == nil else {
-                sendError(self.getStringFromError(error!))
-                return
-            }
-            
-            /* GUARD: Was there any data returned? */
-            guard let data = data else {
-                sendError("No data was returned by the request")
-                return
-            }
-            
-            /* GUARD: Did we get a successful 2XX response? */
-            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
-                self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: { (result, error) in
-                    let errorString: String
-                    if let errorDict = result as? [String: AnyObject] {
-                        errorString = errorDict["error"] as! String
-                    } else {
-                        errorString = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                    }
-                    sendError(errorString)
-                    return
-                })
-                return
-            }
-            
-            //Parse the data and use the data (happens in completion handler) */
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForDELETE)
-        }
-        
-        task.resume()
-        
-        return task
-        
-    }
     
-    //MARK Helpers
+    //MARK: Helpers
     private func getStringFromError(error: NSError) -> String {
         var errorText: String
         if let errorDict = error.userInfo[NSLocalizedDescriptionKey] as? [String: AnyObject] {

@@ -103,4 +103,36 @@ extension UnderArmourClient {
         }
     }
     
+    //MARK: Access Token
+    
+    func getNewAccessToken(completionHandlerForGetNewAccessToken: (success: Bool, accessToken: String?) -> Void) {
+        
+        //Create the NSURL
+        let parameters = [String: AnyObject]()
+        let url = underArmourURLWithMethod(parameters, methodPath: Methods.GetAccessToken)
+        
+        //Set the Form Parameter String
+let paramString = "\(RequestKeys.grantType)=\(RequestValues.grantType)&\(RequestKeys.clientId)=\(RequestValues.clientId)&\(RequestKeys.clientSecret)=\(RequestValues.clientSecret)"
+
+        //Set the headers
+        let headers = [HeaderKeys.APIKey: HeaderValues.APIKey]
+        
+        requestBuilder.taskForPOSTMethod(url, paramString: paramString, headers: headers) { (result, error) in
+            
+            guard error == nil else {
+                print(error)
+                completionHandlerForGetNewAccessToken(success: false, accessToken: nil)
+                return
+            }
+            
+            if let accessToken = result["access_token"] as? String {
+                completionHandlerForGetNewAccessToken(success: true, accessToken: accessToken)
+            } else {
+                completionHandlerForGetNewAccessToken(success: false, accessToken: nil)
+            }
+            
+        }
+        
+    }
+    
 }
