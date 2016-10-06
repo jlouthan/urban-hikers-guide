@@ -183,19 +183,28 @@
                                     <action selector="downloadGpx:" destination="gd2-dl-Imc" eventType="touchUpInside" id="ngr-w5-OHf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-gt-ilr">
+                                <rect key="frame" x="222.5" y="632" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4lw-3e-kSz" firstAttribute="leading" secondItem="5u0-bL-rrV" secondAttribute="leadingMargin" constant="-20" id="Jyx-3a-7Hw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4lw-3e-kSz" secondAttribute="trailing" constant="-20" id="KFx-SK-dlq"/>
+                            <constraint firstItem="lOg-gt-ilr" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="Uqr-be-SEG"/>
                             <constraint firstItem="vP2-pM-JEg" firstAttribute="top" secondItem="4lw-3e-kSz" secondAttribute="bottom" constant="40" id="bfz-y8-7sW"/>
                             <constraint firstItem="4lw-3e-kSz" firstAttribute="top" secondItem="bJ6-ax-gQP" secondAttribute="bottom" id="hSG-Ze-D0N"/>
                             <constraint firstItem="CaL-ad-JDY" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="hs5-8a-OVi"/>
+                            <constraint firstItem="lOg-gt-ilr" firstAttribute="top" secondItem="4lw-3e-kSz" secondAttribute="bottom" constant="12" id="i9K-wy-QSy"/>
                             <constraint firstItem="CaL-ad-JDY" firstAttribute="top" secondItem="vP2-pM-JEg" secondAttribute="bottom" constant="20" id="k7n-gK-msN"/>
                             <constraint firstItem="vP2-pM-JEg" firstAttribute="centerX" secondItem="4lw-3e-kSz" secondAttribute="centerX" id="lXl-0I-mUe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="downloadSuccessLabel" destination="lOg-gt-ilr" id="g9o-Fj-tfH"/>
                         <outlet property="mapImageView" destination="4lw-3e-kSz" id="Lh1-4R-Mk3"/>
                     </connections>
                 </viewController>

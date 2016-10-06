@@ -14,12 +14,14 @@ class MapViewController: UIViewController {
     
     var hike: Hike!
     
+    @IBOutlet var downloadSuccessLabel: UILabel!
     @IBOutlet weak var mapImageView: UIImageView!
     
     override func viewDidLoad() {
         if let mapImageData = hike.mapImageData {
             mapImageView.image = UIImage(data: mapImageData)
         }
+        downloadSuccessLabel.hidden = true
         title = hike.name
     }
     
@@ -78,10 +80,23 @@ class MapViewController: UIViewController {
             }
             
             //success saving file
-            //TODO indicate success in the UI?
+            performUIUpdatesOnMain({ 
+                self.showDownloadSuccess()
+            })
             print("Download file and saved to \(destinationUrl)")
             
         }
 
+    }
+    
+    //Download Success Indicator
+    func showDownloadSuccess() {
+        downloadSuccessLabel.alpha = 1
+        downloadSuccessLabel.hidden = false
+        UIView.animateWithDuration(3, delay: 1, options: UIViewAnimationOptions.TransitionFlipFromTop, animations: {
+                self.downloadSuccessLabel.alpha = 0
+            }) { (finished) in
+                self.downloadSuccessLabel.hidden = true
+        }
     }
 }
