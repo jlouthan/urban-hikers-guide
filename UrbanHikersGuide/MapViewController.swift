@@ -43,8 +43,6 @@ class MapViewController: UIViewController {
     //TODO move this to a networking class
     func downloadAndSaveMapFile(fileType: String, url: NSURL?) {
         //For now, use the shared session
-        //TODO create custom session so I can set self to delegate
-        // and receive handlers to indicate download activity?
         guard let url = url else {
             print("Hike does not have a \(fileType) file url. Aborting download")
             return
@@ -54,9 +52,8 @@ class MapViewController: UIViewController {
         request.addValue("tmsv3uyh462u7fwqawhwy8stzdqsdzfs", forHTTPHeaderField: "Api-Key")
         request.addValue("Bearer 9fed1f01e0148dec037e751e2f4ebe7f57d929bc", forHTTPHeaderField: "Authorization")
         
-        //TODO this callback could be moved to a handler to better monitor progress
         let task = session.downloadTaskWithRequest(request) { (url, response, error) in
-            //TODO add all error handling
+            //TODO add all error handling and alerts
             
             guard let url = url else {
                 print("No url returned from download request")

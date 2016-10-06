@@ -39,8 +39,8 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         
         UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
             guard success == true, let hikeArray = hikeDictionaries else {
-                print("An Error occurred retrieving Hike data.")
-                //TODO show an error message in the UI as well here
+                let errorMessage = "An Error occurred retrieving Hike data. Inspect your network connection and try again."
+                self.displayErrorAlert(errorMessage)
                 return
             }
             
@@ -94,8 +94,17 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             try sharedContext.save()
             getHikes()
         } catch let error as NSError {
-            print("Error refreshing hikes \(error)")
+            let errorMessage = "Error refreshing hikes \(error)"
+            displayErrorAlert(errorMessage)
         }
+    }
+    
+    func displayErrorAlert(errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (UIAlertAction) in }
+        alert.addAction(action)
+        presentViewController(alert, animated: true) { }
+        print(errorMessage)
     }
     
     //MARK: Table View Delegate

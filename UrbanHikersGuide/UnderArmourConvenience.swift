@@ -44,7 +44,6 @@ extension UnderArmourClient {
             }
             
             //Get links for Hike files from more complex key paths
-            //TODO generalize this?
             guard let hikeThumbs = hikeLinks["thumbnail"] as? [[String: AnyObject]],
                 var hikeMapImageUrl = hikeThumbs[0]["href"] as? String else {
                     print("GetRouteById response does not contain expected Hike link properties.")
@@ -55,7 +54,6 @@ extension UnderArmourClient {
             //Replace size in mapImageUrl to retrieve bigger image from cloudfront
             hikeMapImageUrl = hikeMapImageUrl.stringByReplacingOccurrencesOfString(API.ReturnedMapSize, withString: API.HikeMapSize)
             
-            //TODO generalize this?
             guard let hikeFiles = hikeLinks["alternate"] as? [[String: AnyObject]],
                 let hikeKmlFileUrl = hikeFiles[0]["href"] as? String,
                 let hikeGpxFileUrl = hikeFiles[1]["href"] as? String else {
