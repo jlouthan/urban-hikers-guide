@@ -64,7 +64,13 @@
                             <outlet property="delegate" destination="1yn-8n-pQC" id="FnT-C0-a4o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Hikes" id="hdC-fp-bf9"/>
+                    <navigationItem key="navigationItem" title="All Hikes" id="hdC-fp-bf9">
+                        <barButtonItem key="rightBarButtonItem" image="favoriteSort" id="HGh-Xk-JQA">
+                            <connections>
+                                <action selector="showFavorites:" destination="1yn-8n-pQC" id="rhk-YM-avT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbr-5O-uWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,4 +207,7 @@
             <point key="canvasLocation" x="-308" y="308"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favoriteSort" width="22" height="22"/>
+    </resources>
 </document>

@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 
 class HikeListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+
+    @IBAction func showFavorites(sender: UIBarButtonItem) {
+        print("SHOWING FAVORITES");
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +97,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         
         return cell
     }
+
     
     //MARK: Core Data
     
