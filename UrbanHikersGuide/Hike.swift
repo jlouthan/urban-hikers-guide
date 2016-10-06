@@ -31,6 +31,11 @@ class Hike: NSManagedObject {
         case easy = 1, moderate, difficult
     }
     
+    //Convert meters to miles, rounded to hundredth of a mile
+    func metersToMiles(meters: Double) -> Double {
+        return Double(round(100 * (meters / 1609.34) ) / 100)
+    }
+    
     //MARK : Initializers
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
@@ -46,7 +51,8 @@ class Hike: NSManagedObject {
         
         //Set the properties on the model
         name = dictionary["name"] as! String
-        distance = dictionary["distance"] as! Double
+        let distanceInMeters = dictionary["distance"] as! Double
+        distance = metersToMiles(distanceInMeters)
         overview = dictionary["overview"] as! String
         
         let imgUrl = dictionary["mapImageUrl"] as! String
