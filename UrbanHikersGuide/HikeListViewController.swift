@@ -16,6 +16,12 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         
         // Start the fetched results controller
         performFetch()
+        
+        //Standardize next page's back button text, since title of 
+        // this page can change depending on sort/filter
+        let backItem = UIBarButtonItem()
+        backItem.title = "Hikes"
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,9 +61,11 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         if fetchedResultsController.fetchRequest.predicate != nil {
             //This means we're already showing favorites. Switch to showing all.
             fetchedResultsController.fetchRequest.predicate = nil
+            navigationItem.title = "All Hikes"
         } else {
             //This means we're not showing only favorites. Proceed to do so.
             fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(booleanLiteral: true))
+            navigationItem.title = "Favorite Hikes"
         }
         
         // re-fetch
