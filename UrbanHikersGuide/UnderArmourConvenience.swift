@@ -10,7 +10,7 @@ import Foundation
 
 extension UnderArmourClient {
     
-    func getRouteById(routeId: String, completionHandlerForGetRouteById: (success: Bool, hikeDictionary: [String: AnyObject]?) -> Void) {
+    func getRouteById(accessToken: String, routeId: String, completionHandlerForGetRouteById: (success: Bool, hikeDictionary: [String: AnyObject]?) -> Void) {
         
         //Creat the NSURL
         let parameters = [
@@ -19,9 +19,13 @@ extension UnderArmourClient {
         
         let methodPath = requestBuilder.substituteKeyInMethod(Methods.RouteById, key: URLKeys.RouteId, value: routeId)
         let url = underArmourURLWithMethod(parameters, methodPath: methodPath)
+        let headers = [
+            HeaderKeys.APIKey: HeaderValues.APIKey,
+            HeaderKeys.Authorization: "Bearer \(accessToken)"
+        ]
         
         //Make the request
-        requestBuilder.taskForGETMethod(url, headers: API.CommonHeaders) { (result, error) in
+        requestBuilder.taskForGETMethod(url, headers: headers) { (result, error) in
             
             guard error == nil else {
                 print(error)
@@ -77,30 +81,45 @@ extension UnderArmourClient {
     
     func getAllRoutes(completionHandlerForGetAllRoutes: (success: Bool, hikeDictionaries: [[String: AnyObject]]?) -> Void) {
         
-        var storedError: String!
-        var hikeDictionaries = [[String:AnyObject]]()
-        let downloadGroup = dispatch_group_create()
+        //Since we only make this call the first time the app loads or when a user refreshes hikes,
+        // get a new access token each time to ensure freshness (otherwise they expire after 60 days)
         
-        for routeId in API.HikeRouteIds {
-            dispatch_group_enter(downloadGroup)
-            getRouteById(routeId, completionHandlerForGetRouteById: { (success, hikeDictionary) in
-                if let hike = hikeDictionary {
-                    hikeDictionaries.append(hike)
-                } else {
-                    storedError = "Failed to get data for a Route"
-                }
-                dispatch_group_leave(downloadGroup)
-            })
-        }
-        
-        dispatch_group_notify(downloadGroup, dispatch_get_main_queue()) {
-            guard storedError == nil else {
-                print(storedError)
+        getNewAccessToken { (success, accessToken) in
+            
+            guard success == true && accessToken != nil else {
+                print("There was an error retrieving UA Access Token")
                 completionHandlerForGetAllRoutes(success: false, hikeDictionaries: nil)
                 return
             }
-            completionHandlerForGetAllRoutes(success: true, hikeDictionaries: hikeDictionaries)
+            
+            var storedError: String!
+            var hikeDictionaries = [[String:AnyObject]]()
+            let downloadGroup = dispatch_group_create()
+            
+            for routeId in API.HikeRouteIds {
+                //Use a dispatch group to run many async requests at once
+                dispatch_group_enter(downloadGroup)
+                self.getRouteById(accessToken!, routeId: routeId, completionHandlerForGetRouteById: { (success, hikeDictionary) in
+                    if let hike = hikeDictionary {
+                        hikeDictionaries.append(hike)
+                    } else {
+                        storedError = "Failed to get data for a Route"
+                    }
+                    dispatch_group_leave(downloadGroup)
+                })
+            }
+            
+            dispatch_group_notify(downloadGroup, dispatch_get_main_queue()) {
+                guard storedError == nil else {
+                    print(storedError)
+                    completionHandlerForGetAllRoutes(success: false, hikeDictionaries: nil)
+                    return
+                }
+                completionHandlerForGetAllRoutes(success: true, hikeDictionaries: hikeDictionaries)
+            }
+            
         }
+        
     }
     
     //MARK: Access Token

@@ -13,11 +13,6 @@ extension UnderArmourClient {
         static let APIScheme = "https"
         static let APIHost = "api.ua.com"
         static let APIPath = "/v7.1"
-        //MARK: Common Headers
-        static let CommonHeaders = [
-            HeaderKeys.APIKey: HeaderValues.APIKey,
-            HeaderKeys.Authorization: HeaderValues.Authorization
-        ]
         //MARK: Hike Route IDs
         // IDs of the routes used for hikes in the app
         //TODO load this from a plist?
@@ -49,8 +44,6 @@ extension UnderArmourClient {
     //MARK: Header Values {
     struct HeaderValues {
         static let APIKey = "tmsv3uyh462u7fwqawhwy8stzdqsdzfs"
-        //TODO allow for overwriting this access token after the 60 day TTL
-        static let Authorization = "Bearer 9fed1f01e0148dec037e751e2f4ebe7f57d929bc"
     }
     
     //MARK: Methods
