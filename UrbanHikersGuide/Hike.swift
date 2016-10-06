@@ -18,7 +18,9 @@ class Hike: NSManagedObject {
     @NSManaged var overview: String
     var difficulty: Difficulty {
         get {
-            return Difficulty(rawValue: 2)!
+            //For start, this is a simple piecewise function of distance
+            let value = 1 + floor(self.distance / (5.0/3.0))
+            return Difficulty(rawValue: Int(value))!
         }
     }
     @NSManaged var mapImageData: NSData?
