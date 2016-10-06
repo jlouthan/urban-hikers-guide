@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HikeDetailViewController: UIViewController {
+class HikeDetailViewController: UIViewController{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -30,8 +30,20 @@ class HikeDetailViewController: UIViewController {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
+        setViewContent()
+    }
+    
+    func setViewContent() {
         nameLabel.text = hike.name
         descriptionTextView.text = hike.overview
+        
+        //Set the text view height to contain the text        
+        let fixedWidth = descriptionTextView.frame.size.width
+        descriptionTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        let newSize = descriptionTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        var newFrame = descriptionTextView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        descriptionTextView.frame = newFrame;
     }
     
     @IBAction func showMapView(sender: UIButton) {
@@ -55,5 +67,16 @@ class HikeDetailViewController: UIViewController {
         } else {
             favoriteBtn.setImage(UIImage(named: "favoriteOff"), forState: .Normal)
         }
+    }
+    
+    //MARK: UITextViewDelegate
+    
+    func textViewDidChange(textView: UITextView) {
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame;
     }
 }
