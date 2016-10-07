@@ -27,6 +27,7 @@
 		18BBF3741D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3731D9F28C400FF0BE7 /* UrbanHikersGuideUITests.swift */; };
 		18BBF3831D9F336E00FF0BE7 /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3821D9F336E00FF0BE7 /* Hike.swift */; };
 		18BBF3851D9F376000FF0BE7 /* HikeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */; };
+		18F93C201DA71DC200B13463 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F93C1F1DA71DC200B13463 /* SplashScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		18BBF3751D9F28C400FF0BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BBF3821D9F336E00FF0BE7 /* Hike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
 		18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeDetailViewController.swift; sourceTree = "<group>"; };
+		18F93C1F1DA71DC200B13463 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				18BBF3551D9F28C400FF0BE7 /* HikeListViewController.swift */,
 				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
 				189407381DA0997600EFAB0A /* MapViewController.swift */,
+				18F93C1F1DA71DC200B13463 /* SplashScreenViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				1827D36B1DA36D4500549572 /* HikeTableViewCell.swift in Sources */,
 				1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */,
 				18BBF3561D9F28C400FF0BE7 /* HikeListViewController.swift in Sources */,
+				18F93C201DA71DC200B13463 /* SplashScreenViewController.swift in Sources */,
 				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
 				189407441DA0CFBF00EFAB0A /* UnderArmourConvenience.swift in Sources */,
