@@ -10,7 +10,7 @@
         <!--All Hikes-->
         <scene sceneID="pUl-sC-6bx">
             <objects>
-                <tableViewController id="1yn-8n-pQC" customClass="HikeListViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HikeListViewController" id="1yn-8n-pQC" customClass="HikeListViewController" customModule="UrbanHikersGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CSn-M5-1Pw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
         <!--Navigation Controller-->
         <scene sceneID="K4c-Dt-n3W">
             <objects>
-                <navigationController id="eeh-bD-d1M" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" id="eeh-bD-d1M" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JEN-ei-3mm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
