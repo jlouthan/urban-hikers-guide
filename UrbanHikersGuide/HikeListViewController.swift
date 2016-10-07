@@ -12,6 +12,8 @@ import CoreData
 class HikeListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var refreshButton: UIBarButtonItem!
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         let backItem = UIBarButtonItem()
         backItem.title = "Hikes"
         navigationItem.backBarButtonItem = backItem
+        
+        configureLoadingView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,11 +40,12 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     }
     
     func getHikes() {
-        
+        setLoadingViewHidden(false)
         UnderArmourClient.sharedInstance().getAllRoutes { (success, hikeDictionaries) in
             guard success == true, let hikeArray = hikeDictionaries else {
                 let errorMessage = "An Error occurred retrieving Hike data. Inspect your network connection and try again."
                 ErrorAlert.displayErrorAlert(errorMessage, currentView: self)
+                self.setLoadingViewHidden(true)
                 return
             }
             
@@ -54,6 +59,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
                 //Save the hikes and reload the table
                 CoreDataStackManager.sharedInstance().saveContext()
                 self.tableView.reloadData()
+                self.setLoadingViewHidden(true)
             })
         }
     }
@@ -92,6 +98,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             }
             //Save the context then get all fresh hikes
             try sharedContext.save()
+            refreshButton.enabled = false
             getHikes()
         } catch let error as NSError {
             let errorMessage = "Error refreshing hikes \(error)"
@@ -99,6 +106,31 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         }
     }
     
+    
+    //MARK: Loading View
+    
+    func configureLoadingView() {
+        //Configure the child view that shows when loading hikes over network
+        let loadingViewHeight = tableView.frame.height / 3
+        let loadingViewY = loadingViewHeight
+        loadingView.frame = CGRect(x: 0, y: loadingViewY, width: tableView.frame.width, height: loadingViewHeight)
+        loadingView.backgroundColor = UIColor.grayColor()
+    }
+    
+    func setLoadingViewHidden(hidden: Bool) {
+        performUIUpdatesOnMain({
+            if hidden {
+                //If we're hiding, stop the spinner and hide the view
+                self.activityIndicator.stopAnimating()
+                self.loadingView.removeFromSuperview()
+                self.refreshButton.enabled = true
+            } else {
+                //If we're showing, start spinner and display view
+                self.activityIndicator.startAnimating()
+                self.navigationController!.view.addSubview(self.loadingView)
+            }
+        })
+    }
     
     //MARK: Table View Delegate
     
