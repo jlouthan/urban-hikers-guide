@@ -34,7 +34,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         super.viewWillAppear(animated)
         
         //If we don't have any hikes yet, make network request to get them
-        if let hikeObjects = fetchedResultsController.fetchedObjects where hikeObjects.isEmpty {
+        if let hikeObjects = fetchedResultsController.fetchedObjects  where hikeObjects.isEmpty {
             getHikes()
         }
     }
