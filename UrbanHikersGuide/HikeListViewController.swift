@@ -114,7 +114,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         let loadingViewHeight = tableView.frame.height / 3
         let loadingViewY = loadingViewHeight
         loadingView.frame = CGRect(x: 0, y: loadingViewY, width: tableView.frame.width, height: loadingViewHeight)
-        loadingView.backgroundColor = UIColor.grayColor()
+        loadingView.backgroundColor = UIColor(red: 86/255, green: 166/255, blue: 91/255, alpha: 1.0)
     }
     
     func setLoadingViewHidden(hidden: Bool) {

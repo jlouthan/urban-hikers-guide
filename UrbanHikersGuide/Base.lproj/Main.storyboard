@@ -85,31 +85,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading the hikes..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qq-V8-rkP">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading All Hikes..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qq-V8-rkP">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-FY-xYO">
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="5Za-yn-sYP"/>
-                                <constraint firstAttribute="width" constant="40" id="AhN-AA-2nU"/>
-                            </constraints>
-                        </activityIndicatorView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-FY-xYO"/>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="sUQ-FY-xYO" firstAttribute="centerX" secondItem="TE2-Yj-yXm" secondAttribute="centerX" id="RRL-0z-GO7"/>
-                        <constraint firstItem="sUQ-FY-xYO" firstAttribute="top" secondItem="6Qq-V8-rkP" secondAttribute="bottom" constant="20" id="aDL-00-fQt"/>
-                        <constraint firstItem="6Qq-V8-rkP" firstAttribute="top" secondItem="TE2-Yj-yXm" secondAttribute="top" constant="25" id="lyf-bt-Lx9"/>
-                        <constraint firstItem="6Qq-V8-rkP" firstAttribute="centerX" secondItem="TE2-Yj-yXm" secondAttribute="centerX" id="rB8-ks-Kuu"/>
-                        <constraint firstItem="6Qq-V8-rkP" firstAttribute="centerX" secondItem="TE2-Yj-yXm" secondAttribute="centerX" id="sJC-tc-XUP"/>
+                        <constraint firstItem="6Qq-V8-rkP" firstAttribute="leading" secondItem="sUQ-FY-xYO" secondAttribute="trailing" constant="12" id="15k-X1-Jrk"/>
+                        <constraint firstItem="sUQ-FY-xYO" firstAttribute="leading" secondItem="TE2-Yj-yXm" secondAttribute="leading" constant="18" id="Q7r-J1-C81"/>
+                        <constraint firstItem="6Qq-V8-rkP" firstAttribute="centerY" secondItem="TE2-Yj-yXm" secondAttribute="centerY" id="s3p-21-Bcm"/>
+                        <constraint firstItem="sUQ-FY-xYO" firstAttribute="centerY" secondItem="TE2-Yj-yXm" secondAttribute="centerY" id="uuf-3V-6Wb"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="sJC-tc-XUP"/>
-                        </mask>
-                    </variation>
                 </view>
             </objects>
             <point key="canvasLocation" x="512" y="308"/>
