@@ -13,12 +13,13 @@ class UrbanHikersButton: UIButton {
     
     // MARK: Properties
     
-    let defaultBorderWidth: CGFloat = 1.0
-    let defaultBorderColer = UIColor.blackColor().CGColor
+    let defaultColor = UIColor(red: 86/255, green: 166/255, blue: 91/255, alpha: 2.5)
+    let defaultBorderWidth: CGFloat = 1.5
     let defaultButtonCornerRadius: CGFloat = 3.0
     let defaultButtonTopBottomPadding: CGFloat = 5.0
     let defaultButtonLeftRightPadding: CGFloat = 10.0
     let defaultButtonFontSize: CGFloat = 18.0
+    let defaultButtonFontWeight: CGFloat = UIFontWeightBold
     
     // MARK: Initialization
     
@@ -37,9 +38,9 @@ class UrbanHikersButton: UIButton {
         contentEdgeInsets = UIEdgeInsetsMake(defaultButtonTopBottomPadding, defaultButtonLeftRightPadding, defaultButtonTopBottomPadding,defaultButtonLeftRightPadding)
         layer.cornerRadius = defaultButtonCornerRadius
         layer.borderWidth = defaultBorderWidth
-        layer.borderColor = defaultBorderColer
-        titleLabel?.font = UIFont.systemFontOfSize(defaultButtonFontSize)
-        setTitleColor(UIColor.blackColor(), forState: .Normal)
+        layer.borderColor = defaultColor.CGColor
+        titleLabel?.font = UIFont.systemFontOfSize(defaultButtonFontSize, weight: defaultButtonFontWeight)
+        setTitleColor(defaultColor, forState: .Normal)
     }
     
 }
