@@ -12,12 +12,12 @@ The app also contains static route maps for each hike, and maps in .kml and .gpx
 These can then be imported into Google Maps, MapMyWalk, or your other favorite tracking app.
 
 Users can favorite individual hikes by selecting the Heart icon on a hike's detail page. Hikes in the main list view
-can be filtered by Favorited by toggling the Heart icon in the upper right. All Hikes can be refreshed from the remote API by tapping the refresh icon in the upper left of the list view.
+can be filtered by Favorited by toggling the Heart icon in the upper right. Favorited hikes are persisted after restarting the app, but not after refreshing all hike data via the API. All Hike data can be refreshed from the remote API by tapping the refresh icon in the upper left of the list view.
 
 
 ##Running the app
 
-After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator or on a compatible device. Note that Urban Hikers' Guide is written to compile in Xcode 7.3.1 and Swift 2.2.
+After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator or on a compatible device. Note that Urban Hikers' Guide is written to compile in Xcode 7 and Swift 2.2.
 
 ##External APIs and Data
 
