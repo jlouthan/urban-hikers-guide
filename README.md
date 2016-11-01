@@ -6,7 +6,7 @@ This application was created as my Udacity iOS Nanodegree Program capstone proje
 
 ##Intended Experience
 
-Upon opening the app, all hikes will be loaded if they haven't already. Once the main list view is populated with hikes,
+Upon opening the app, all hikes will be loaded if they haven't already. This may take a couple minutes. Once the main list view is populated with hikes,
 users can browse and view many details about them. Each hike includes details about its distance, difficulty, and a description. 
 The app also contains static route maps for each hike, and maps in .kml and .gpx formats are available for download to your device. 
 These can then be imported into Google Maps, MapMyWalk, or your other favorite tracking app.
@@ -17,7 +17,7 @@ can be filtered by Favorited by toggling the Heart icon in the upper right. All 
 
 ##Running the app
 
-After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator. Note that Urban Hikers' Guide is written to compile in Xcode's most recent stable release, which at the time of writing is Xcode 8.0 and Swift 2.3.
+After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator or on a compatible device. Note that Urban Hikers' Guide is written to compile in Xcode 7.3.1 and Swift 2.2.
 
 ##External APIs and Data
 
