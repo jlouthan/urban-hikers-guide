@@ -98,7 +98,6 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             }
             //Save the context then get all fresh hikes
             try sharedContext.save()
-            refreshButton.enabled = false
             getHikes()
         } catch let error as NSError {
             let errorMessage = "Error refreshing hikes \(error)"
@@ -126,6 +125,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
                 self.refreshButton.enabled = true
             } else {
                 //If we're showing, start spinner and display view
+                self.refreshButton.enabled = false
                 self.activityIndicator.startAnimating()
                 self.navigationController!.view.addSubview(self.loadingView)
             }
