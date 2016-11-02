@@ -234,10 +234,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
+                        <outlet property="delegate" destination="rps-MB-C4o" id="EK2-KC-JtN"/>
                         <segue destination="1yn-8n-pQC" kind="relationship" relationship="rootViewController" id="ycL-85-7P6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqw-H4-cNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="rps-MB-C4o" customClass="SplashScreenViewController" customModule="UrbanHikersGuide" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-308" y="308"/>
         </scene>
