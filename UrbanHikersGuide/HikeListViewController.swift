@@ -30,7 +30,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         configureLoadingView()
         
         //Configure pull to refresh control
-        refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(HikeListViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
