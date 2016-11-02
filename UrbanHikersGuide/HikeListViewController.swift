@@ -92,7 +92,11 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             self.tableView.reloadData()
         }
     }
-    @IBAction func refreshHikes(sender: UIBarButtonItem) {
+    @IBAction func handleRefreshButtonTap(sender: UIBarButtonItem) {
+        refreshHikes()
+    }
+    
+    func refreshHikes() {
         //Try to delete all existing hikes
         do {
             let hikes = fetchedResultsController.fetchedObjects as! [Hike]
@@ -110,7 +114,7 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     
     //MARK: Refresh Control
     func refresh(sender: AnyObject) {
-        print("refreshing with pull")
+        refreshHikes()
         refreshControl?.endRefreshing()
     }
     
