@@ -7,12 +7,11 @@ This application was created as my Udacity iOS Nanodegree Program capstone proje
 ##Intended Experience
 
 Upon opening the app, all hikes will be loaded if they haven't already. This may take a couple minutes. Once the main list view is populated with hikes,
-users can browse and view many details about them. Each hike includes details about its distance, difficulty, and a description. 
-The app also contains static route maps for each hike, and maps in .kml and .gpx formats are available for download to your device. 
-These can then be imported into Google Maps, MapMyWalk, or your other favorite tracking app.
+users can browse and view details about them. Each hike includes details about its distance, difficulty, and a description. 
+The app also contains static route maps for each hike.
 
 Users can favorite individual hikes by selecting the Heart icon on a hike's detail page. Hikes in the main list view
-can be filtered by Favorited by toggling the Heart icon in the upper right. Favorited hikes are persisted after restarting the app, but not after refreshing all hike data via the API. All Hike data can be refreshed from the remote API by tapping the refresh icon in the upper left of the list view.
+can be filtered by Favorited by toggling the Heart icon in the upper right. Favorited hikes are persisted after restarting the app, but not after refreshing all hike data via the API. All Hike data can be refreshed from the remote API by tapping the refresh icon in the upper left of the list view or by pulling to refresh in the table view.
 
 
 ##Running the app
