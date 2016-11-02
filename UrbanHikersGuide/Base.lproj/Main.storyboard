@@ -73,6 +73,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1gU-Hv-VAS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="activityIndicator" destination="sUQ-FY-xYO" id="wxt-X8-xAh"/>
                         <outlet property="loadingView" destination="TE2-Yj-yXm" id="Ig2-6U-wQQ"/>

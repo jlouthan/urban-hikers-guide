@@ -28,6 +28,9 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
         navigationItem.backBarButtonItem = backItem
         
         configureLoadingView()
+        
+        //Configure pull to refresh control
+        refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -103,6 +106,12 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
             let errorMessage = "Error refreshing hikes \(error)"
             ErrorAlert.displayErrorAlert(errorMessage, currentView: self)
         }
+    }
+    
+    //MARK: Refresh Control
+    func refresh(sender: AnyObject) {
+        print("refreshing with pull")
+        refreshControl?.endRefreshing()
     }
     
     
