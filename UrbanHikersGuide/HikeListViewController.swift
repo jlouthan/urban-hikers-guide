@@ -114,7 +114,10 @@ class HikeListViewController: UITableViewController, NSFetchedResultsControllerD
     
     //MARK: Refresh Control
     func refresh(sender: AnyObject) {
-        refreshHikes()
+        //Only refresh if we're not showing favorites
+        if (navigationItem.title == "All Hikes") {
+            refreshHikes()
+        }
         refreshControl?.endRefreshing()
     }
     
