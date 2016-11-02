@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-class SplashScreenViewController: UIViewController, UINavigationControllerDelegate {
-    
-    func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
-    }
+class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 86/255, green: 166/255, blue: 91/255, alpha: 1.0)

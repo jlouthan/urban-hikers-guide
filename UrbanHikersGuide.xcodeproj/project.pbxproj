@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181170A01DCA506D00E732C1 /* NavControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811709F1DCA506D00E732C1 /* NavControllerDelegate.swift */; };
 		1827D3621DA345E000549572 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3611DA345E000549572 /* CoreDataStackManager.swift */; };
 		1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1827D3661DA3526F00549572 /* Model.xcdatamodeld */; };
 		1827D36B1DA36D4500549572 /* HikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1811709F1DCA506D00E732C1 /* NavControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavControllerDelegate.swift; sourceTree = "<group>"; };
 		1827D3611DA345E000549572 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStackManager.swift; path = ../CoreDataStackManager.swift; sourceTree = "<group>"; };
 		1827D3671DA3526F00549572 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1827D36A1DA36D4500549572 /* HikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				18BBF3841D9F376000FF0BE7 /* HikeDetailViewController.swift */,
 				189407381DA0997600EFAB0A /* MapViewController.swift */,
 				18F93C1F1DA71DC200B13463 /* SplashScreenViewController.swift */,
+				1811709F1DCA506D00E732C1 /* NavControllerDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				18F93C201DA71DC200B13463 /* SplashScreenViewController.swift in Sources */,
 				189407391DA0997600EFAB0A /* MapViewController.swift in Sources */,
 				18BBF3541D9F28C400FF0BE7 /* AppDelegate.swift in Sources */,
+				181170A01DCA506D00E732C1 /* NavControllerDelegate.swift in Sources */,
 				189407441DA0CFBF00EFAB0A /* UnderArmourConvenience.swift in Sources */,
 				189407401DA0CA6600EFAB0A /* UnderArmourClient.swift in Sources */,
 				1827D3681DA3526F00549572 /* Model.xcdatamodeld in Sources */,
